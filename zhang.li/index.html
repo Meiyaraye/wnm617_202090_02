@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Animal Tracker</title>
+   <title> Dog Tracker</title>
 
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
    <link rel="stylesheet" href="css/app.css">
@@ -21,9 +21,22 @@
 
    <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column">
+        
          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="icon" style="width:80vw;height:80vw;"><defs><style>.stroke-thin-center{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:4px;}</style></defs><title>thumbs-up</title><path d="M50,25V45H75.86l-2.93,2.93L70,50.86V74a1,1,0,0,1-1,1H20V55h5A20,20,0,0,0,45,35V25h5m0-10H40a5,5,0,0,0-5,5V35A10,10,0,0,1,25,45H10V85H69A11,11,0,0,0,80,74V55l2.93-2.93a10,10,0,0,0,0-14.14L80,35H60V25A10,10,0,0,0,50,15Z"></path><line class="stroke-thin-center" x1="30" y1="79" x2="30" y2="50"></line></svg>
-         </div>
+               <img src="img/logo.png" viewBox="0 0 100 100" class="icon" style="width:60vw;height:60vw;">
+            <line class="stroke-thin-center" x1="30" y1="79" x2="30" y2="50"></line>
+         </div> 
+      <div id="dogtracker" style="text-align:center">
+         <h2>Dog Tracker</h2>
+      </div>
+
+
+
+
+
+
+
+
          <form id="signin-form" data-ajax="false">
             <div class="form-control">
                <label for="signin-username" class="form-label">Username</label>
@@ -71,10 +84,38 @@
    </section>
 
    <section data-role="page" id="recent-page">
+
+
+
+
+ <header data-role="header" id="mappage-head">
+         <h1>Dog Tracker</h1>
+      </header>
+
+
+
+
+
       <div data-role="main">
-         <div class="floater top right">
-            <div class="btn-circle" data-activate="#recent-add-modal">&equiv;</div>
+         <div class="floater top left">
+            <div class="btn-circle" data-activate="#recent-add-modal">
+           
+            <img src="img/host.png" viewBox="0 0 10 10" class="icon" style="width:6vw;height:6vw;">
          </div>
+         </div>
+
+
+
+
+   <div class="searchstyle" id="searchbar" style="width:calc(100% - 2em)">
+            <form id="recent-search" class="dog-search" data-ajax="false">
+               <img src="img/search.png" viewBox="0 0 10 10" class="icon" style="width:6vw;height:6vw;">
+               <input type="search" data-role="none" class="search" placeholder="Search for dog">
+            </form>
+         </div>
+
+
+
          <div class="floater bottom right">
             <div class="btn-circle" data-toggle="#recent-profile-modal">&plus;</div>
          </div>
@@ -213,7 +254,7 @@
    </section>
 
    <section data-role="page" id="user-profile-page">
-      <div data-role="main">
+      <div data-role="main" class="userprofile">
          User Profile
          <p><a href="#" class="js-logout">Logout</a></p>
       </div>

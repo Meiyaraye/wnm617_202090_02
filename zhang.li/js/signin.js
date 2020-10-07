@@ -12,13 +12,15 @@ const checkSigninForm = () => {
    } else {
       // not logged in
       console.log('failure');
+   
       sessionStorage.removeItem('userId');
-
+       //$("p").text("Please enter again.");
       // DO SOMETHING HERE
    }
 
    checkUserId();
 }
+
 
 
 const checkUserId = () => {

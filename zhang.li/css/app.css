@@ -61,17 +61,25 @@ a:hover {
 
 
 /* Layout Classes */
-
+#signin-page,
+#signup-page,
+#recent-page,
+#mappage-head
+ {
+    background-color: #f9f9e7;
+}
 
 .hidden { display:none; }
 
 
-.display-flex { display:flex; }
+.display-flex { display:flex; 
+                margin: 0em 1.5em;}
 .display-block { display:block; }
 .display-inline-flex { display:inline-flex; }
 .display-inline-block { display:inline-block; }
 
-.flex-stretch { flex: 1 1 auto; }
+.flex-stretch { flex: 1 1 auto; 
+                 margin-top: 1em;}
 .flex-none { flex:none; }
 
 .flex-align-center { align-items:center; }
@@ -85,7 +93,9 @@ a:hover {
    overflow: auto;
 }
 
-
+.dogsearch{
+  align-items:padding-right;
+}
 
 
 /* FORMS */
@@ -109,6 +119,7 @@ a:hover {
     padding: 0.5em 1em;
     margin: 0;
     outline: 0;
+    border-radius: 2em;
 }
 .form-button {
     display: inline-block;
@@ -120,6 +131,8 @@ a:hover {
     margin: 0;
     outline: 0;
     text-align: center;
+    border-radius: 1em;
+    background-color: #3fa93f;
 }
 
 
@@ -128,7 +141,10 @@ a:hover {
 
 #signin-form,
 #signup-form {
-   padding:1em;
+     padding-bottom: 5em;
+    padding-top: 0em;
+    padding-left: 1.5em;
+    padding-right:1.5em;
 }
 .signin-alt {
    padding:1em;
@@ -141,7 +157,10 @@ a:hover {
    background-size:cover;
 }
 
-
+.userprofile {
+    text-align: center;
+    padding-top: 1em;
+}
 
 
 
@@ -172,6 +191,7 @@ a:hover {
 
    overflow:hidden;
    position:relative;
+    background-color: #f9f9e7;
 }
 .ui-header .ui-title {
    margin:0;
