@@ -71,13 +71,21 @@ a:hover {
 
 
 .display-flex { display:flex;
+<<<<<<< HEAD
                 margin:0em 1.5em;}
+=======
+                margin:2em 2em;}
+>>>>>>> 3940b5c37269d79ac298f75939fcf78605c780a1
 .display-block { display:block; }
 .display-inline-flex { display:inline-flex; }
 .display-inline-block { display:inline-block; }
 
+<<<<<<< HEAD
 .flex-stretch { flex: 1 1 auto;
                 margin-top: 1em;}
+=======
+.flex-stretch { flex: 1 1 auto; }
+>>>>>>> 3940b5c37269d79ac298f75939fcf78605c780a1
 .flex-none { flex:none; }
 
 .flex-align-center { align-items:center; }
@@ -134,10 +142,14 @@ a:hover {
 
 #signin-form,
 #signup-form {
+<<<<<<< HEAD
     padding-bottom: 5em;
     padding-top: 0em;
     padding-left: 1em;
     padding-right: 1em;
+=======
+   padding:1em;
+>>>>>>> 3940b5c37269d79ac298f75939fcf78605c780a1
 }
 .signin-alt {
    padding:1em;
@@ -151,6 +163,7 @@ a:hover {
 }
 
 
+<<<<<<< HEAD
 .userprofile{
   text-align: center;
   padding-top: 1em;
@@ -163,6 +176,9 @@ a:hover {
     top: 1%;
     left: 20%;
 }
+=======
+
+>>>>>>> 3940b5c37269d79ac298f75939fcf78605c780a1
 
 
 /* PAGE LAYOUTS */
