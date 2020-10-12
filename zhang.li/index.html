@@ -64,6 +64,14 @@
                <label for="signup-username" class="form-label">Username</label>
                <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Type your username">
             </div>
+
+
+             <div class="form-control">
+               <label for="signup-email" class="form-label">Email</label>
+               <input id="signup-email" type="text" class="form-input" data-role="none" placeholder="Type your email">
+            </div>
+
+
             <div class="form-control">
                <label for="signup-password" class="form-label">Password</label>
                <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
@@ -89,23 +97,20 @@
 
 
  <header data-role="header" id="mappage-head">
-         <h1>Dog Tracker</h1>
-      </header>
+   <!--  <img src="img/logo.png" viewBox="0 0 10 10" class="icon" style="width:9vw;height:9vw;align-items: center">
+  -->
+      <h1>Dog Tracker</h1> </header>
 
 
-
-
-
-      <div data-role="main">
-         <div class="floater top left">
-            <div class="btn-circle" data-activate="#recent-add-modal">
+<div data-role="main">   
+  
+  <!--<div class="floater top right">
+           <div class="btn-circle" data-activate="#recent-add-modal">  </div>
            
-            <img src="img/host.png" viewBox="0 0 10 10" class="icon" style="width:6vw;height:6vw;">
+            <img src="img/addpin.png" viewBox="0 0 10 10" class="icon" style="width:10vw;height:10vw;">
+       
          </div>
-         </div>
-
-
-
+  -->
 
    <div class="searchstyle" id="searchbar" style="width:calc(100% - 2em)">
             <form id="recent-search" class="dog-search" data-ajax="false">
@@ -121,7 +126,7 @@
          </div>
 
 
-         <div class="modal" id="recent-add-modal">
+      <!--   <div class="modal" id="recent-add-modal">
             <div class="modal-back" data-deactivate="#recent-add-modal"></div>
             <div class="modal-drawer bottom">
                <div class="modal-head">head</div>
@@ -129,16 +134,46 @@
             </div>
          </div>
 
-         <div class="modal" id="recent-profile-modal">
+      -->
+
+
+
+<div class="modal" id="recent-profile-modal">
+
+
             <div class="modal-drawer left">
-               <div class="modal-head">head</div>
-               <div class="modal-body">body</div>
-            </div>
+               <div class="modal-head">New Location</div>
+          
+
+
+         <div class="modal-body">
+               <div class="form-control">
+                  <label for="list-add-name" class="form-label">Address</label>
+                  <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type the street address">
+               </div>
+               <div class="form-control">
+                  <label for="list-add-type" class="form-label">City</label>
+                  <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Type the city">
+               </div>
+               <div class="form-control">
+                  <label for="list-add-breed" class="form-label">States</label>
+                  <input id="list-add-breed" type="text" class="form-input" data-role="none" placeholder="Type the states">
+               </div>
+                <div class="form-control">
+                  <label for="list-add-breed" class="form-label">Zip Code</label>
+                  <input id="list-add-breed" type="text" class="form-input" data-role="none" placeholder="Type the Zip Code">
+               </div>
+
+            
          </div>
-      </div>
+
+  
+         </div>
+    </div>
+</div>
       <footer data-role="footer">
          <ul>
-            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#recent-page">Map</a></li>
             <li><a href="#list-page">List</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
@@ -147,82 +182,48 @@
 
    <section data-role="page" id="list-page">
       <header data-role="header">
-         <h1>List Page</h1>
+         <h1>Dog List</h1>
          <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#" data-activate="#list-add-modal">&plus;</a></li>
+            <li class="flex-stretch" ></li>
+            <li><a href="#"  data-activate="#list-add-modal">
+               <img src="img/add.png" viewBox="0 0 14 14" class="icon" style="width:13vw;height:13vw;">
+
+            </a></li>
          </ul>
       </header>
       <div data-role="main">
          <div class="overscroll">
             <ul>
                <!-- li*10>a[href=#animal-profile-page]{Animal $} -->
-               <li><a href="#animal-profile-page">Animal 1</a></li>
-               <li><a href="#animal-profile-page">Animal 2</a></li>
-               <li><a href="#animal-profile-page">Animal 3</a></li>
-               <li><a href="#animal-profile-page">Animal 4</a></li>
-               <li><a href="#animal-profile-page">Animal 5</a></li>
-               <li><a href="#animal-profile-page">Animal 6</a></li>
-               <li><a href="#animal-profile-page">Animal 7</a></li>
-               <li><a href="#animal-profile-page">Animal 8</a></li>
-               <li><a href="#animal-profile-page">Animal 9</a></li>
-               <li><a href="#animal-profile-page">Animal 10</a></li>
-               <li><a href="#animal-profile-page">Animal 1</a></li>
-               <li><a href="#animal-profile-page">Animal 2</a></li>
-               <li><a href="#animal-profile-page">Animal 3</a></li>
-               <li><a href="#animal-profile-page">Animal 4</a></li>
-               <li><a href="#animal-profile-page">Animal 5</a></li>
-               <li><a href="#animal-profile-page">Animal 6</a></li>
-               <li><a href="#animal-profile-page">Animal 7</a></li>
-               <li><a href="#animal-profile-page">Animal 8</a></li>
-               <li><a href="#animal-profile-page">Animal 9</a></li>
-               <li><a href="#animal-profile-page">Animal 10</a></li>
-               <li><a href="#animal-profile-page">Animal 1</a></li>
-               <li><a href="#animal-profile-page">Animal 2</a></li>
-               <li><a href="#animal-profile-page">Animal 3</a></li>
-               <li><a href="#animal-profile-page">Animal 4</a></li>
-               <li><a href="#animal-profile-page">Animal 5</a></li>
-               <li><a href="#animal-profile-page">Animal 6</a></li>
-               <li><a href="#animal-profile-page">Animal 7</a></li>
-               <li><a href="#animal-profile-page">Animal 8</a></li>
-               <li><a href="#animal-profile-page">Animal 9</a></li>
-               <li><a href="#animal-profile-page">Animal 10</a></li>
-               <li><a href="#animal-profile-page">Animal 1</a></li>
-               <li><a href="#animal-profile-page">Animal 2</a></li>
-               <li><a href="#animal-profile-page">Animal 3</a></li>
-               <li><a href="#animal-profile-page">Animal 4</a></li>
-               <li><a href="#animal-profile-page">Animal 5</a></li>
-               <li><a href="#animal-profile-page">Animal 6</a></li>
-               <li><a href="#animal-profile-page">Animal 7</a></li>
-               <li><a href="#animal-profile-page">Animal 8</a></li>
-               <li><a href="#animal-profile-page">Animal 9</a></li>
-               <li><a href="#animal-profile-page">Animal 10</a></li>
-               <li><a href="#animal-profile-page">Animal 1</a></li>
-               <li><a href="#animal-profile-page">Animal 2</a></li>
-               <li><a href="#animal-profile-page">Animal 3</a></li>
-               <li><a href="#animal-profile-page">Animal 4</a></li>
-               <li><a href="#animal-profile-page">Animal 5</a></li>
-               <li><a href="#animal-profile-page">Animal 6</a></li>
-               <li><a href="#animal-profile-page">Animal 7</a></li>
-               <li><a href="#animal-profile-page">Animal 8</a></li>
-               <li><a href="#animal-profile-page">Animal 9</a></li>
-               <li><a href="#animal-profile-page">Animal 10</a></li>
-               <li><a href="#animal-profile-page">Animal 1</a></li>
-               <li><a href="#animal-profile-page">Animal 2</a></li>
-               <li><a href="#animal-profile-page">Animal 3</a></li>
-               <li><a href="#animal-profile-page">Animal 4</a></li>
-               <li><a href="#animal-profile-page">Animal 5</a></li>
-               <li><a href="#animal-profile-page">Animal 6</a></li>
-               <li><a href="#animal-profile-page">Animal 7</a></li>
-               <li><a href="#animal-profile-page">Animal 8</a></li>
-               <li><a href="#animal-profile-page">Animal 9</a></li>
-               <li><a href="#animal-profile-page">Animal 10</a></li>
+
+              <li> <img src="img/dog1.png" alt="dog1" style="width:2em;height:2em;">
+               <a href="#animal-profile-page">Dog 1</a></li>
+
+
+               <li> <img src="img/dog2.png" alt="dog2" style="width:2em;height:2em;">
+              <a href="#animal-profile-page">Dog 2</a></li>
+
+
+               <li> <img src="img/dog3.png" alt="dog3" style="width:2em;height:2em;">
+              <a href="#animal-profile-page">Dog 3</a></li>
+
+               <li> <img src="img/dog4.png" alt="dog4" style="width:2em;height:2em;">
+              <a href="#animal-profile-page">Dog 4</a></li>
+
+               <li> <img src="img/dog5.png" alt="dog5" style="width:2em;height:2em;">
+              <a href="#animal-profile-page">Dog 5</a></li>
+
+               <li> <img src="img/dog6.png" alt="dog6" style="width:2em;height:2em;">
+              <a href="#animal-profile-page">Dog 6</a></li>
+               
+       
+ 
             </ul>
          </div>
       </div>
       <footer data-role="footer">
          <ul>
-            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#recent-page">Map</a></li>
             <li><a href="#list-page">List</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
@@ -245,22 +246,85 @@
                   <label for="list-add-breed" class="form-label">Breed</label>
                   <input id="list-add-breed" type="text" class="form-input" data-role="none" placeholder="Type animal breed">
                </div>
+
+                <div class="form-control">
+                  <label for="list-add-color" class="form-label">Color</label>
+                  <input id="list-add-color" type="text" class="form-input" data-role="none" placeholder="Type animal color">
+               </div>
+
             </div>
-            <div class="modal-foot">
-               <input type="submit" value="Save" data-role="none">
-            </div>
+          
          </div>
       </div>
    </section>
 
    <section data-role="page" id="user-profile-page">
       <div data-role="main" class="userprofile">
-         User Profile
-         <p><a href="#" class="js-logout">Logout</a></p>
+
+  <h3>User Profile</h3>
+
+
+<div class="overscroll">
+
+
+
+
+
+
+
+<main class="flex-center">
+            <form class="line-style-form" action="">
+               <div class="flex-center-dogprofile dog-info">
+                  <div class="dog-photo-box flex-center">
+                     <img id="new-dog-img" src="img/user.png" alt="">
+                  </div>
+                  <p class="flex-center-dogprofile">
+                     <label >Edit Profile</label>
+                    
+
+                  </p>
+                  
+            
+
+               </div>
+               <div class="flex-center-dogprofile">
+                   <label for="dog-name">Username</label>
+                   <input data-role="none" type="text" name="name" id="new-dog-name" placeholder="Meiya" required>
+               </div>
+               <div class="flex-center-dogprofile">
+                   <label for="alcohol">Email</label>
+                   <input data-role="none" type="text" name="type" id="new-dog-type" placeholder="meiya@gmail.com" required>
+               </div>
+               <div class="flex-center-dogprofile">
+                   <label for="bar">Intro</label>
+                   <input data-role="none" type="text" name="breed" id="new-dog-breed" placeholder="I like bulldogs." required>
+               </div>
+                 <div class="flex-center-dogprofile">
+                   <label for="bar">Password</label>
+                   <input data-role="none" type="text" name="color" id="new-dog-color" placeholder="******" required>
+               </div>
+            </form>
+         </main>
+
+
+
+
+
+
+
+
+
+
+
+          <p><a href="#" class="js-logout">Logout</a></p>
       </div>
+
+
+</div>
+      
       <footer data-role="footer">
          <ul>
-            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#recent-page">Map</a></li>
             <li><a href="#list-page">List</a></li>
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
@@ -269,13 +333,63 @@
 
    <section data-role="page" id="animal-profile-page">
       <header data-role="header">
-         <h1>Animal Page</h1>
+         <h1>Dog Profile</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
          </ul>
       </header>
       <div data-role="main">
-         Animal Profile
+      
+
+
+<main class="flex-center">
+            <form class="line-style-form" action="">
+               <div class="flex-center-dogprofile dog-info">
+                  <div class="dog-photo-box flex-center">
+                     <img id="new-dog-img" src="img/dog4.png" alt="">
+                  </div>
+                  <p class="flex-center-dogprofile">
+                     <label >Edit Profile</label>
+                    
+
+                  </p>
+                  
+            
+
+               </div>
+               <div class="flex-center-dogprofile">
+                   <label for="dog-name">Name</label>
+                   <input data-role="none" type="text" name="name" id="new-dog-name" placeholder="Lily" required>
+               </div>
+               <div class="flex-center-dogprofile">
+                   <label for="alcohol">Type</label>
+                   <input data-role="none" type="text" name="type" id="new-dog-type" placeholder="Small" required>
+               </div>
+               <div class="flex-center-dogprofile">
+                   <label for="bar">Breed</label>
+                   <input data-role="none" type="text" name="breed" id="new-dog-breed" placeholder="bulldog" required>
+               </div>
+                 <div class="flex-center-dogprofile">
+                   <label for="bar">Color</label>
+                   <input data-role="none" type="text" name="color" id="new-dog-color" placeholder="White and brown" required>
+               </div>
+            </form>
+         </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
    </section>
 

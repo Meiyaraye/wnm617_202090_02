@@ -89,7 +89,7 @@ a:hover {
 
 .overscroll {
    width: 100%;
-   height: 100%;
+   height: 80%;
    overflow: auto;
 }
 
@@ -229,7 +229,12 @@ a:hover {
 
 
 
-
+input.search {
+    width: 60%;
+    border-radius: 2em;
+    border-width: 0;
+    line-height: 2em;
+}
 
 
 
@@ -294,7 +299,7 @@ a:hover {
 .modal-drawer.left,
 .modal-drawer.right {
    height:100%;
-   width:70vw;
+   width:80vw;
 }
 .modal-drawer.left { left:0; transform:translateX(-100%); }
 .modal-drawer.right { right:0; transform:translateX(100%); }
@@ -341,10 +346,13 @@ a:hover {
 .floater.top { top:1em; }
 .floater.bottom { bottom:1em; }
 
+.floater.bottom.right {
+    color: white;
+}
 
 /* CIRCLE BUTTON */
 .btn-circle {
-    background-color: white;
+    background-color: #96080C;
     line-height: 3rem;
     width: 3rem;
     display: inline-block;
@@ -353,3 +361,48 @@ a:hover {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     font-size: 1.5em;
 }
+
+
+
+.flex-center-dogprofile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+
+input#new-dog-name
+ {
+    width: 70%;
+    border-radius: 2em;
+    background-color: #f4fff4;
+ 
+}
+
+input#new-dog-type
+ {
+    width: 70%;
+    border-radius: 2em;
+    background-color: #f4fff4;
+ 
+}
+input#new-dog-breed
+ {
+    width: 70%;
+    border-radius: 2em;
+    background-color: #f4fff4;
+ 
+}
+input#new-dog-color
+ {
+    width: 70%;
+    border-radius: 2em;
+    background-color: #f4fff4;
+ 
+}
+
+
