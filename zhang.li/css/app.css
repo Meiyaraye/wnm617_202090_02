@@ -390,12 +390,82 @@ input.search {
 
 
 
-.flex-center-dogprofile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+
+
+
+
+/* PROFILE */
+.profile-image img {
+    border-radius: 50%;
+    width: calc(100vw - 4em);
+    height: calc(100vw - 4em);
+    object-fit: cover;
+    margin: 2em;
 }
+.profile-body {
+   padding:1em;
+}
+.profile-name {
+   font-size:1.5em;
+   margin-bottom: 1em;
+}
+
+
+
+
+
+
+.settings-list {
+   list-style-type:none;
+   margin:0;
+   padding:0;
+}
+
+.settings-item a {
+   display:block;
+   padding:0.5em 1em;
+   border-bottom:1px solid var(--color-neutral-lighter);
+   position:relative;
+}
+.settings-item a:not([href='#'])::after {
+   content:'>';
+   position:absolute;
+   top:50%;
+   right:1em;
+   transform:translateY(-50%);
+}
+
+
+
+
+
+.animallist-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    vertical-align:text-bottom;
+}
+.animallist-item {
+    display: flex;
+    margin: 1em;
+    border-radius: 1em;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.animallist-description {
+   padding:0.5em;
+}
+.animallist-type,
+.animallist-breed {
+   font-size:0.8em;
+}
+.animallist-name {
+   font-size:1.2em;
+}
+
+
+
 
 
 
@@ -432,3 +502,17 @@ input#new-dog-color
 }
 
 
+
+.nav-icon img {
+   width:1em;
+   height:1em;
+   vertical-align: text-bottom;
+}
+.nav-icon {
+   line-height:calc(var(--header-height) * 0.6);
+   font-size:1.5em;
+}
+.nav-label {
+   line-height:calc(var(--header-height) * 0.4);
+   font-size:0.7em;
+}
