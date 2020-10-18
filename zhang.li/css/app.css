@@ -412,6 +412,10 @@ element.style {
 }
 
 
+div#addnew-location-head {
+    padding: 0.5em;
+    background-color: lightskyblue;
+}
 
 
 

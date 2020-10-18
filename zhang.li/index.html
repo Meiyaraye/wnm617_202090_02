@@ -139,12 +139,14 @@
 
 
 <div class="modal" id="recent-profile-modal">
+     
 
-
-            <div class="modal-drawer left">
-               <div class="modal-head">Add New Location</div>
+   <div class="modal-drawer left">
+               <div class="modal-head" id="addnew-location-head">
+               <h3>Add New Location</h3>
+               </div>
           
-
+  
 
          <div class="modal-body">
                <div class="form-control">
@@ -172,6 +174,7 @@
   
          </div>
     </div>
+
 </div>
       <footer data-role="footer" data-template="#footer-template">>
          <ul>
@@ -180,6 +183,7 @@
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
       </footer>
+
    </section>
 
    <section data-role="page" id="list-page">
@@ -339,14 +343,14 @@
       </header>
 
    <div class="overscroll">
-    
+    <div class="imagepicker imagepicker-replace thumbnail" >
       <form>
   
-          <label class="imagepicker imagepicker-replace thumbnail">
+       
            <input type='file' id="imagepicker1">
-          </label>
+        
       </form>
-
+    </div>
  <div class="modal" id="list-add-modal">
 
       <form id="list-add-form" data-ajax="false" class="modal-popup">
@@ -708,7 +712,7 @@ Group: Non-Sporting Group
        <form>
   
           <label class="imagepicker imagepicker-replace thumbnail">
-           <input type='file' id="imagepicker1">
+           <input type='file' id="imagepicker2">
           </label>
       </form>
 </section>
