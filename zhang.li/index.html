@@ -23,8 +23,8 @@
       <div data-role="main" class="display-flex flex-column">
         
          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-               <img src="img/logo.png" viewBox="0 0 100 100" class="icon" style="width:60vw;height:60vw;">
-            <line class="stroke-thin-center" x1="30" y1="79" x2="30" y2="50"></line>
+               <img src="img/logo.png" class="icon" style="width:60vw;height:60vw;" alt="logo">
+           
          </div> 
       <div id="dogtracker" style="text-align:center">
          <h2>Dog Tracker</h2>
@@ -114,7 +114,7 @@
 
    <div class="searchstyle" id="searchbar" style="width:calc(100% - 2em)">
             <form id="recent-search" class="dog-search" data-ajax="false">
-               <img src="img/search.png" viewBox="0 0 10 10" class="icon" style="width:6vw;height:6vw;">
+               <img src="img/search.png" class="icon" alt="searchicon" style="width:6vw;height:6vw;">
                <input type="search" data-role="none" class="search" placeholder="Search for dog">
             </form>
          </div>
@@ -142,7 +142,7 @@
 
 
             <div class="modal-drawer left">
-               <div class="modal-head">New Location</div>
+               <div class="modal-head">Add New Location</div>
           
 
 
@@ -161,9 +161,11 @@
                </div>
                 <div class="form-control">
                   <label for="list-add-breed" class="form-label">Zip Code</label>
-                  <input id="list-add-breed" type="text" class="form-input" data-role="none" placeholder="Type the Zip Code">
+                  <input  type="text" class="form-input" data-role="none" placeholder="Type the Zip Code">
                </div>
-
+                 <div class="form-control">
+               <input type="submit" class="form-button" value="SAVE" data-role="none" data-toggle="#recent-profile-modal">
+            </div>
             
          </div>
 
@@ -183,6 +185,8 @@
    <section data-role="page" id="list-page">
       <header data-role="header">
          <h1>Dog List</h1>
+
+<!--
          <ul>
             <li class="flex-stretch" ></li>
             <li><a href="#"  data-activate="#list-add-modal">
@@ -190,74 +194,120 @@
 
             </a></li>
          </ul>
+
+-->  
+       <ul>
+            <li class="flex-stretch" ></li>
+            <li> <a href="#add-dog-page" data-activate="#list-add-modal">
+               <img src="img/add.png" alt="add" class="icon" style="width:13vw;height:13vw;">
+
+            </a></li>
+         </ul>
+
       </header>
       <div data-role="main">
+
+
+         <div class="searchstyle"  style="width:calc(100% - 2em)">
+            <form class="dog-search" data-ajax="false">
+               <img id="searchicon" src="img/search.png" class="icon" alt="searchicon" style="width:6vw;height:6vw;">
+               <input type="search" data-role="none" class="search" placeholder="Search for dog"  >
+
+            </form>
+         </div>
+
+<!--
+    <div class="searchicon" style="background-image:url('img/icon/search.png')">
+         <label>  
+            
+             <input type="search" class="list-search form-input" placeholder="Search for Products">
+         </label>
+         </div>
+
+-->
+
+
          <div class="overscroll">
-         <div class="animallist">
+         <div class="animallist" >
                <a href="#animal-profile-page" class="animallist-item">
                   <div class="animallist-image">
-                     <img src="https://via.placeholder.com/300/3a9/fff?text=horse" alt="">
+                     <img src="img/dog/1.jpg" alt="">
                   </div>
                   <div class="animallist-description">
-                     <div class="animallist-name">Juicy</div>
-                     <div class="animallist-type"><strong>type</strong> Horse</div>
-                     <div class="animallist-breed"><strong>breed</strong> Andalusian</div>
+                     <div class="animallist-name">Lily</div>
+                     <div class="animallist-type"><strong>Color: </strong> Golden</div>
+                     <div class="animallist-breed"><strong>Breed: </strong> Shiba Inu</div>
                   </div>
                </a>
                <a href="#animal-profile-page" class="animallist-item">
                   <div class="animallist-image">
-                     <img src="https://via.placeholder.com/300/93a/fff?text=dog" alt="">
+                     <img src="img/dog/Bichon-frise.jpg" alt="">
                   </div>
                   <div class="animallist-description">
-                     <div class="animallist-name">Jimmy</div>
-                     <div class="animallist-type"><strong>type</strong> Dog</div>
-                     <div class="animallist-breed"><strong>breed</strong> Bulldog</div>
+                     <div class="animallist-name">Ice cream</div>
+                     <div class="animallist-type"><strong>Color: </strong> White</div>
+                     <div class="animallist-breed"><strong>Breed: </strong> Bichon frise
+                     </div>
                   </div>
                </a>
                <a href="#animal-profile-page" class="animallist-item">
                   <div class="animallist-image">
-                     <img src="https://via.placeholder.com/300/a39/fff?text=cat" alt="">
+                     <img src="img/dog/Bulldog.jpg" alt="">
                   </div>
                   <div class="animallist-description">
-                     <div class="animallist-name">Corn</div>
-                     <div class="animallist-type"><strong>type</strong> Cat</div>
-                     <div class="animallist-breed"><strong>breed</strong> Ginger</div>
+                     <div class="animallist-name">Lucky</div>
+                   <div class="animallist-type"><strong>Color: </strong> Golden and white</div>
+                     <div class="animallist-breed"><strong>Breed: </strong> Bulldog
+                     </div>
                   </div>
                </a>
 
 
                        <a href="#animal-profile-page" class="animallist-item">
                   <div class="animallist-image">
-                     <img src="https://via.placeholder.com/300/3a9/fff?text=horse" alt="">
+                     <img src="img/dog/cane-corso.jpg" alt="">
                   </div>
                   <div class="animallist-description">
-                     <div class="animallist-name">Juicy</div>
-                     <div class="animallist-type"><strong>type</strong> Horse</div>
-                     <div class="animallist-breed"><strong>breed</strong> Andalusian</div>
+                     <div class="animallist-name">Coal</div>
+                    <div class="animallist-type"><strong>Color: </strong> Black</div>
+                     <div class="animallist-breed"><strong>Breed: </strong> Cane corso
+                     </div>
                   </div>
                </a>
                <a href="#animal-profile-page" class="animallist-item">
                   <div class="animallist-image">
-                     <img src="https://via.placeholder.com/300/93a/fff?text=dog" alt="">
+                     <img src="img/dog/Dalmation-Dog.jpg" alt="">
                   </div>
                   <div class="animallist-description">
-                     <div class="animallist-name">Jimmy</div>
-                     <div class="animallist-type"><strong>type</strong> Dog</div>
-                     <div class="animallist-breed"><strong>breed</strong> Bulldog</div>
+                     <div class="animallist-name">Sam</div>
+                     <div class="animallist-type"><strong>Color: </strong> Black and white</div>
+                     <div class="animallist-breed"><strong>Breed: </strong> Dalmation
+                     </div>
                   </div>
                </a>
                <a href="#animal-profile-page" class="animallist-item">
                   <div class="animallist-image">
-                     <img src="https://via.placeholder.com/300/a39/fff?text=cat" alt="">
+                     <img src="img/dog/Cavalier-King-Charles-Spaniel.jpg" alt="">
                   </div>
                   <div class="animallist-description">
-                     <div class="animallist-name">Corn</div>
-                     <div class="animallist-type"><strong>type</strong> Cat</div>
-                     <div class="animallist-breed"><strong>breed</strong> Ginger</div>
+                     <div class="animallist-name">Hamburger</div>
+                    <div class="animallist-type"><strong>Color: </strong> Golden and white</div>
+                     <div class="animallist-breed"><strong>Breed: </strong> Cavalier-King-Charles-Spaniel
+                     </div>
                   </div>
                </a>
 
-
+                   <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/dog/Russell-Terrier.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name">Taco</div>
+                    <div class="animallist-type"><strong>Color: </strong> Golden and white</div>
+                     <div class="animallist-breed"><strong>Breed: </strong> Russell-Terrier
+                     </div>
+                  </div>
+               </a>
 
 
 
@@ -273,33 +323,72 @@
          </ul>
       </footer>
 
-      <div class="modal" id="list-add-modal">
-         <div class="modal-back" data-deactivate="#list-add-modal"></div>
-         <form id="list-add-form" data-ajax="false" class="modal-popup">
-            <div class="modal-head">Add Animal</div>
-            <div class="modal-body">
+     </section>
+
+
+
+
+
+ <section data-role="page" id="add-dog-page">
+
+      <header data-role="header">
+         <h1>Add New Dog</h1>
+         <ul>
+            <li><a href="#" data-rel="back"> &#10094; </a></li>
+         </ul>
+      </header>
+
+   <div class="overscroll">
+    
+      <form>
+  
+          <label class="imagepicker imagepicker-replace thumbnail">
+           <input type='file' id="imagepicker1">
+          </label>
+      </form>
+
+ <div class="modal" id="list-add-modal">
+
+      <form id="list-add-form" data-ajax="false" class="modal-popup">
+
+                    <div class="modal-body">
                <div class="form-control">
                   <label for="list-add-name" class="form-label">Name</label>
-                  <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
+                  <input  type="text" class="form-input" data-role="none" placeholder="Type dog name">
                </div>
                <div class="form-control">
-                  <label for="list-add-type" class="form-label">Type</label>
-                  <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Type animal type">
+                  <label for="list-add-type" class="form-label">Location</label>
+                  <input  type="text" class="form-input" data-role="none" placeholder="Type address">
                </div>
                <div class="form-control">
-                  <label for="list-add-breed" class="form-label">Breed</label>
-                  <input id="list-add-breed" type="text" class="form-input" data-role="none" placeholder="Type animal breed">
+                  <label for="list-add-breed" class="form-label">Color</label>
+                  <input type="text" class="form-input" data-role="none" placeholder="Type color">
                </div>
 
                 <div class="form-control">
-                  <label for="list-add-color" class="form-label">Color</label>
-                  <input id="list-add-color" type="text" class="form-input" data-role="none" placeholder="Type animal color">
+                  <label for="list-add-color" class="form-label">Breed</label>
+                  <input id="list-add-color" type="text" class="form-input" data-role="none" placeholder="Type breed">
+
+
                </div>
 
+
+               <div class="form-control">
+               <label class="form-label">Add Note:</label>
+               <textarea data-role="none" name="dog-note" class="add-dog-note"></textarea>
+               </div>
+
+
+               <div class="form-control">
+               <a href="#list-page" class="form-button">SAVE</a>
+               </div>
             </div>
-          
-         </div>
-      </div>
+
+
+
+       </form>
+     </div>
+   </div>
    </section>
 
 
@@ -307,29 +396,51 @@
 
    <section data-role="page" id="user-profile-page">
       <div data-role="main">
-         <div class="profile-image">
-            <img src="https://via.placeholder.com/600/?text=Profile" alt="">
+
+         <div class="display-flex user-profile-card space-around" >
+            <div class="profile-image flex-none">
+               <img src="img/user-profile.jpg" alt="" class="profile-image">
+            </div>
+          
+           <div class="user-detail flex-stretch">
+               <h3 id="user-name">Jane</h3>
+               <p id="user-location">Location: San Francisco</p>
+            </div>
+
          </div>
-         <div class="profile-body">
-            <div class="profile-name">Kenneth</div>
-            <div class="profile-email"><strong>Email</strong>: ken@neth.com</div>
+
+         <div class="user-profile-detail">
+         <h4 id="my-information">My Information:</h4>
+            <p><span>Gender:</span> Female</p>
+            <p><span>Email:</span> Jane@gmail.com</p>
+            <p><span>Favorite dog:</span> Bulldog</p>
          </div>
-         <p><a href="#settings-page">Settings</a></p>
+
+
+         <div class="setting" id="setting-icons">
+
+
+         <p><a href="#settings-page">SETTINGS</a></p>
+        </div>
+      
+
       </div>
+     
+
+
+
+
+
+
+
+
+
+
+
+
       <footer data-role="footer" data-template="#footer-template"></footer>
       
    </section>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -340,7 +451,7 @@
       <header data-role="header">
          <h1>Settings Page</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back">&#10094;</a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -356,26 +467,59 @@
       <header data-role="header">
          <h1>Profile Settings</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back">&#10094;</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back">Save</a></li>
+            <!--   <li><a href="#" data-rel="back">Save</a></li>. -->
          </ul>
       </header>
       <div data-role="main" style="padding:1em">
+
+
+          <div class="display-flex user-profile-card space-around" >
+            <div class="profile-image flex-none">
+               <img src="img/user-profile.jpg" alt="" class="profile-image">
+            </div>
+          
+           <div class="user-detail flex-stretch">
+               <h3><a href="#imagepicker0" >Edit Picture</a></h3>
+
+               
+            </div>
+
+         </div>
+
+
+
+
          <form id="profile-form" data-ajax="false">
             <div class="form-control">
                <label for="profile-username" class="form-label">Username</label>
-               <input id="profile-username" type="text" class="form-input" data-role="none" placeholder="Type your username" value="kenbro">
+               <input id="profile-username" type="text" class="form-input" data-role="none" placeholder="Type your username" value="Jane">
             </div>
             <div class="form-control">
-               <label for="profile-name" class="form-label">Full Name</label>
-               <input id="profile-name" type="text" class="form-input" data-role="none" placeholder="Type your name" value="Kenneth Jenkins">
+               <label for="profile-location" class="form-label">Location</label>
+               <input id="profile-location" type="text" class="form-input" data-role="none" placeholder="Type your location" value="San Francisco">
             </div>
             <div class="form-control">
                <label for="profile-email" class="form-label">Email</label>
-               <input id="profile-email" type="text" class="form-input" data-role="none" placeholder="Type your email" value="ken@neth.com">
+               <input id="profile-email" type="text" class="form-input" data-role="none" placeholder="Type your email" value="Jane@gmail.com">
             </div>
+
+                <div class="form-control">
+               <label for="profile-favorite" class="form-label">Favorite Dog</label>
+               <input id="profile-favorite" type="text" class="form-input" data-role="none" placeholder="Type your favorite" value="Bulldog">
+            </div>
+
+
+
          </form>
+
+
+          <div class="form-control">
+              <a href="#user-profile-page" class="form-button">SAVE</a>
+            </div>
+
+
       </div>
    </section>
 
@@ -383,9 +527,9 @@
       <header data-role="header">
          <h1>Password Settings</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back">&#10094;</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back">Save</a></li>
+         <!--  <li><a href="#" data-rel="back">Save</a></li>. -->
          </ul>
       </header>
       <div data-role="main" style="padding:1em">
@@ -403,6 +547,12 @@
                <input id="password-confirm" type="text" class="form-input" data-role="none" placeholder="Type your new password again">
             </div>
          </form>
+
+
+          <div class="form-control">
+              <a href="#user-profile-page" class="form-button">SAVE</a>
+            </div>
+
       </div>
    </section>
 
@@ -417,26 +567,159 @@
 
    <section data-role="page" id="animal-profile-page">
       <header data-role="header">
-         <h1>Animal Page</h1>
+         <h1>Dog Page</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#list-page">&#10094;</a></li>
+
+            <li class="flex-stretch"></li>
+            <li >
+               <a href="#" class="flex-none more-icon" data-activate="#dog-menu">&#9998;</a>
+
+            </li>
+
          </ul>
-      </header>
-      <div data-role="main" class="display-flex flex-column">
-         <div class="profile-top" style="height:200px;flex:none;background-image:url(img/map.jpg)"></div>
+      </header>       
+
+<div class="overscroll">
+    <div data-role="main" class="display-flex flex-column">
+
+
+  
+         <div class="profile-top" style="height:200px;width:300px; flex:none;background-image:url(img/dog/0.jpg)"></div>
          <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
-            <div class="overscroll">
-               <p>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Voluptates iste vero animi fugiat voluptas, accusantium est ea veritatis dolore debitis doloremque odit aliquid voluptatem numquam, vitae accusamus illum itaque quia facere ullam dolorum quod sunt atque repellendus, quae. Ducimus, voluptate laudantium. Voluptatibus, nulla ipsam recusandae, iste delectus esse ad deserunt!</p>
-               <p>Maiores eligendi omnis, error incidunt labore fugiat corrupti. Voluptas, laborum rerum ducimus distinctio culpa recusandae libero ullam ratione provident esse iure magni debitis repudiandae hic ab autem dolor quidem. Necessitatibus nam maiores, quasi, voluptate excepturi minus nisi consectetur, quae, sit architecto fugiat? Corrupti ut atque molestias, illum nihil doloremque, tempore?</p>
-               <p>Voluptatum, quis quaerat voluptatem, incidunt necessitatibus reiciendis atque, eveniet aliquam nulla animi impedit, amet ex cupiditate debitis nam magni. Nisi magnam eius porro quibusdam ipsa explicabo aliquid fugit tenetur fuga voluptatum autem id repellendus quis, officia et maiores corporis nihil accusamus doloribus pariatur excepturi repellat ad architecto neque recusandae. Possimus.</p>
-               <p>Cum ut libero, eum, sint molestiae vero accusamus, non laborum excepturi quidem dicta fuga beatae pariatur ab et quis possimus similique explicabo voluptate labore, omnis sed a. Repellendus fuga sapiente natus repellat rem ipsam. Voluptatibus doloremque modi eum aut iste molestias amet, repellat exercitationem dolores accusamus repellendus sed, laborum excepturi?</p>
-               <p>Beatae aperiam consequatur aliquam, aut sit quae dolor corrupti, recusandae consectetur nulla error, tenetur sapiente dolorum soluta. Unde nisi, deleniti aperiam, soluta molestias consectetur, vitae culpa temporibus id quisquam omnis iusto illo doloremque, esse natus ipsam nobis assumenda? Alias dolor sequi voluptatibus minima soluta facilis cum a laboriosam amet repudiandae?</p>
-               <p>Exercitationem quia, nisi culpa neque reiciendis laudantium quidem eaque, totam fuga similique voluptatibus ullam labore facilis hic minima quo sit eos laborum ipsa aliquam suscipit minus id repellat nobis. Deserunt est quibusdam debitis, ipsum. Dicta a explicabo libero vero cumque necessitatibus, aut perferendis, mollitia ullam. Corrupti, praesentium non eveniet reprehenderit.</p>
-               <p>Alias eligendi quidem doloremque quia illum porro, dolorum perferendis quo, nobis quod excepturi placeat ut explicabo, odio illo et a nam consectetur. Perspiciatis nisi eum vero illo amet, exercitationem iusto voluptates incidunt labore natus fugit, commodi voluptatum! Incidunt, harum. Blanditiis laudantium, sunt in aperiam, neque quam corrupti molestiae atque laboriosam.</p>
+           
+               <h3>Name: Lily</h3>
+               <p>Color: Golden</p>
+               <p>Breed: Shiba Inu</p>
+               <p>Location: Southgame Park,Hayward, CA 94545</p>
+               <p>Note:</p>
+
+                 <textarea >Alert, Active, Attentive
+AKC Breed Popularity: Ranks 44 of 196
+Height: 14.5-16.5 inches (male), 13.5-15.5 inches (female)
+Weight: 23 pounds (male), 17 pounds (female)
+Life Expectancy: 13-16 years
+Group: Non-Sporting Group
+            </textarea>
             </div>
          </div>
       </div>
+
+
+
+
+<div class="modal" id="dog-menu" style="top: 0; z-index: 6;">
+         <div class="modal-back" data-deactivate="#dog-menu"></div>
+         <div class="modal-popup">
+            <div class="modal-head"><div><a href="#edit-dog-page">Edit Dog Profile</a></div></div>
+            <div class="modal-foot"><a href="#list-page">Delete Dog Profile</a></div>
+         </div>
+      </div>
+
    </section>
+
+
+
+
+
+
+
+
+   <section data-role="page" id="edit-dog-page">
+
+
+      <header data-role="header">
+         <h1>Edit Dog Profile</h1>
+         <ul>
+            <li><a href="#" data-rel="back">&#10094;</a></li>
+         </ul>
+      </header>
+      <div class="overscroll">
+       
+         <div data-role="main" style="padding:1em">
+
+         <div class="display-flex user-profile-card space-around" >
+            <div class="profile-image flex-none">
+               <img src="img/dog/1.jpg" alt="" class="profile-image">
+            </div>
+          
+           <div class="user-detail flex-stretch">
+               <h3><a href="#imagepicker0" >Edit Dog Picture</a></h3>
+               
+            </div>
+
+         </div>
+
+         <form data-ajax="false">
+            <div class="form-control">
+               <label for="profile-username" class="form-label">Name</label>
+               <input type="text" class="form-input" data-role="none" placeholder="Type your username" value="Lily">
+            </div>
+            <div class="form-control">
+               <label for="profile-color" class="form-label">Color</label>
+               <input id="profile-color" type="text" class="form-input" data-role="none" placeholder="Type your color" value="Golden">
+            </div>
+            <div class="form-control">
+               <label for="profile-breed" class="form-label">Breed</label>
+               <input id="profile-breed" type="text" class="form-input" data-role="none" placeholder="Type your breed" value="Shiba Inu">
+            </div>
+             <div class="form-control">
+               <label for="profile-location" class="form-label">Location</label>
+               <input type="text" class="form-input" data-role="none" placeholder="Type your location" value="Southgate Park,Hayward, CA 94545">
+            </div>
+
+            <div class="form-control">
+               <p>Note:</p>
+              <textarea>Alert, Active, Attentive
+AKC Breed Popularity: Ranks 44 of 196
+Height: 14.5-16.5 inches (male), 13.5-15.5 inches (female)
+Weight: 23 pounds (male), 17 pounds (female)
+Life Expectancy: 13-16 years
+Group: Non-Sporting Group
+            </textarea>
+            </div>
+            
+         </form>
+
+
+          <div class="form-control">
+              <a href="#animal-profile-page" class="form-button">SAVE</a>
+            </div>
+
+
+      </div>
+
+      </div>
+</section>
+  
+
+
+<section data-role="page" id="imagepicker0">
+
+
+      <header data-role="header">
+         <h1>Add a Picture</h1>
+         <ul>
+            <li><a href="#" data-rel="back">&#10094;</a></li>
+         </ul>
+      </header>
+
+
+       <form>
+  
+          <label class="imagepicker imagepicker-replace thumbnail">
+           <input type='file' id="imagepicker1">
+          </label>
+      </form>
+</section>
+
+
+
+
+
+
+
+
 
 
 
@@ -455,7 +738,7 @@
    <ul>
       <li><a href="#recent-page">
          <div class="nav-icon"><img src="img/icon/map.png" alt=""></div>
-         <div class="nav-label">Recent</div>
+         <div class="nav-label">Map</div>
       </a></li>
       <li><a href="#list-page">
          <div class="nav-icon"><img src="img/icon/list.png" alt=""></div>

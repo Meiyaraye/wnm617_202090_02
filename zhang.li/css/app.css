@@ -89,7 +89,7 @@ a:hover {
 
 .overscroll {
    width: 100%;
-   height: 80%;
+   height: 98%;
    overflow: auto;
 }
 
@@ -110,6 +110,7 @@ a:hover {
 .ui-mobile label {
    margin:0.5rem 0;
 }
+
 .form-input {
     display: inline-block;
     width: 100%;
@@ -121,6 +122,9 @@ a:hover {
     outline: 0;
     border-radius: 2em;
 }
+
+
+
 .form-button {
     display: inline-block;
     width: 100%;
@@ -230,17 +234,33 @@ a:hover {
 
 
 input.search {
-    width: 60%;
+      width: 60%;
     border-radius: 2em;
-    border-width: 0;
+    border-width: 0.01em;
     line-height: 2em;
+    border-color: gray;
 }
+
+element.style {
+    background-image: url(img/icon/search.png);
+}
+.searchicon {
+    background-repeat: no-repeat;
+    background-position: right;
+    border-radius: 2em;
+}
+
+
+
+
+
+
 
 
 
 /* MODALS */
 .modal {
-    position: absolute;
+    position: absolute; 
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -260,6 +280,7 @@ input.search {
 
 
 /* MODAL POPUP*/
+
 .modal-popup {
    position:absolute;
    top:50%;
@@ -268,8 +289,9 @@ input.search {
    transition: all 0.3s;
    width:80vw;
 }
+
 .modal-body {
-    background-color: var(--color-white);
+   background-color: var(--color-white);  
     padding: 1em;
 }
 .modal-head, .modal-foot {
@@ -341,13 +363,14 @@ input.search {
 .modal-toast {
    position: absolute;
    width: 50%;
-   background-color: #e7ff3f;
+   background-color: #df2e2e;
    box-shadow: 1px 1px 5px rgba(0,0,0,0.15);
    border-radius: 0.2em;
    padding: 1em;
    text-align: center;
    left: 50%;
    transition: all 0.3s;
+   margin-top: 15em;
 }
 .modal-toast.top {
    top:1em;
@@ -397,11 +420,12 @@ input.search {
 
 /* PROFILE */
 .profile-image img {
-    border-radius: 50%;
-    width: calc(100vw - 4em);
-    height: calc(100vw - 4em);
+      border-radius: 50%;
+    width: calc(100vw - 15em);
+    height: calc(100vw - 15em);
     object-fit: cover;
-    margin: 2em;
+    margin: 1em;
+    margin-top: 2em;
 }
 .profile-body {
    padding:1em;
@@ -409,6 +433,27 @@ input.search {
 .profile-name {
    font-size:1.5em;
    margin-bottom: 1em;
+}
+
+.display-flex.user-profile-card.space-around {
+    background-color: lightseagreen;
+    margin: 0em;
+}
+
+p#user-location {
+    margin-top: 0.5em;
+}
+h3#user-name {
+    margin-bottom: 0em;
+}
+
+.user-profile-detail {
+        margin-left: 2em;
+}
+
+h4#my-information {
+  
+    color:#2f0201;
 }
 
 
@@ -455,6 +500,7 @@ input.search {
 }
 .animallist-description {
    padding:0.5em;
+   padding-left: 1.5em;
 }
 .animallist-type,
 .animallist-breed {
@@ -467,8 +513,9 @@ input.search {
 
 
 
-
-
+.modal-head {
+    align-content: center;
+}
 
 
 input#new-dog-name
@@ -502,6 +549,93 @@ input#new-dog-color
 }
 
 
+img.add-dog-pic {
+    padding: 1em;
+}
+
+
+
+.add-dog-note {
+    background-color: var(--color-neutral-light);
+    border: 1px solid var(--color-neutral-medium);
+    border-radius: 5px;
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+}
+
+
+/*Edit dog profile page*/
+
+.more-icon {
+    max-width: 100px;
+    text-align: end;
+    display: block;
+}
+.flex-none {
+    flex: none;
+}
+.modal-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,calc(-50% + 3em));
+    width: 80vw;
+    transition: all 0.3s;
+}
+.back-header {
+    height: var(--header-height);
+    font-size: 1.5em;
+}
+.display-flex {
+    display: flex;
+}
+.form-upload-photo {
+    background-color: grey;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+}
+
+/* User Profile page*/
+
+.user-icon {
+    margin: 10px;
+    max-width: 150px;
+}
+.user-icon img {
+    border-radius: 50%;
+}
+
+.user-detail {
+    display: flex;
+    /* display: block; */
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+}
+.user-profile-detail {
+    padding: 0 1em 0;
+    line-height: 14px;
+}
+
+
+div#setting-icons {
+    background-color: #fbe7b1;
+    text-align: center;
+    padding: 0.5em;
+    border-radius: 3em;
+    width: 60%;
+  
+    margin-left: 4em;
+}
+
+
+
+
+
+
 
 .nav-icon img {
    width:1em;
@@ -516,3 +650,53 @@ input#new-dog-color
    line-height:calc(var(--header-height) * 0.4);
    font-size:0.7em;
 }
+
+
+
+/*Image Picker*/
+
+/* Create the look of a generic thumbnail */
+.thumbnail {
+  position:relative;
+  display:inline-block;
+  width:6em;
+  height:6em;
+  border-radius:0.6em;
+  border:0.25em solid white;
+  vertical-align:middle;
+  box-shadow:0 0.15em 0.35em 0.1em rgba(0,0,0,0.2);
+  margin:0.5em;
+  
+  background-position:center;
+  background-size:cover;
+  
+}
+
+label.imagepicker.imagepicker-replace.thumbnail {
+    margin-left: 2em;
+}
+
+/* This will hide the file input */
+.imagepicker input {
+  display:none;
+}
+.imagepicker {
+  cursor:pointer;
+  color:white;
+  background-color:rgba(0,0,0,0.3);
+}
+/* This will add the floating plus symbol to the imagepicker */
+.imagepicker:before {
+  content:'+';
+  position:absolute;
+  font-size:3em;
+  vertical-align:middle;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+/* This will hide the plus symbol behind the background of the imagepicker if the class "picked" is added to the element */
+.imagepicker.picked:before {
+  z-index:-1;
+}
+
