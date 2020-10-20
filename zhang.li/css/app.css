@@ -156,7 +156,7 @@ a:hover {
    font-size:0.8em;
 }
 #recent-page [data-role='main'] {
-   background-image:url(../img/map.jpg);
+   background-image:url(../img/map2.jpg);
    background-position:center;
    background-size:cover;
 }
@@ -702,5 +702,15 @@ label.imagepicker.imagepicker-replace.thumbnail {
 /* This will hide the plus symbol behind the background of the imagepicker if the class "picked" is added to the element */
 .imagepicker.picked:before {
   z-index:-1;
+}
+
+
+
+
+
+.ui-input-text, .ui-input-search {
+ margin: .5em 0;
+ border-width: 1px;
+ border-style: inherit;
 }
 
