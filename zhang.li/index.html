@@ -112,17 +112,19 @@
          </div>
   -->
 
-   <div class="searchstyle" id="searchbar" style="width:calc(100% - 2em)">
-            <form id="recent-search" class="dog-search" data-ajax="false">
-               <img src="img/search.png" class="icon" alt="searchicon" style="width:6vw;height:6vw;">
-               <input type="search" data-role="none" class="search" placeholder="Search for dog">
-            </form>
-         </div>
+  <div class="search-control">
+         <div class="display-flex search-bar ">
+            <input type="text" class="flex-stretch" id="search" data-role="none" placeholder="Search for dog" >
+            <img src="img/search.png" class="flex-none">
+         </div>   
+        
+
+   </div>
 
 
 
          <div class="floater bottom right">
-            <div class="btn-circle" data-toggle="#recent-profile-modal">&plus;</div>
+            <div class="btn-circle" data-activate="#pin-on-map">&#9873;</div>
          </div>
 
 
@@ -137,8 +139,7 @@
       -->
 
 
-
-<div class="modal" id="recent-profile-modal">
+<!--<div class="modal" id="recent-profile-modal">
      
 
    <div class="modal-drawer left">
@@ -174,8 +175,26 @@
   
          </div>
     </div>
+  --> 
+
+
+          <a href="#animal-profile-page"><img src="img/green.png" class="animal-list-img location-1"></a>
+         <a href="#animal-profile-page"><img src="img/green.png" class="animal-list-img location-2"></a>
+  
 
 </div>
+
+
+  
+
+
+
+
+
+
+
+
+
       <footer data-role="footer" data-template="#footer-template">>
          <ul>
             <li><a href="#recent-page">Map</a></li>
@@ -183,6 +202,22 @@
             <li><a href="#user-profile-page">Profile</a></li>
          </ul>
       </footer>
+
+
+    <div class="modal" id="pin-on-map">
+            <div class="modal-back" data-deactivate="#pin-on-map"></div>
+            <div class="modal-popup">
+               <div class="modal-head">Pin a memory on the map</div>
+               <div class="modal-body"><a href="#recent-page" data-deactivate="#pin-on-map">Pin on Map</a></div>
+               <div class="modal-body"><a href="#recent-page" data-deactivate="#pin-on-map">Cancel</a></div>
+             
+            </div>
+      </div>
+
+    
+
+
+
 
    </section>
 
@@ -211,7 +246,7 @@
       </header>
       <div data-role="main">
 
-
+<!--
          <div class="searchstyle"  style="width:calc(100% - 2em)">
             <form class="dog-search" data-ajax="false">
                <img id="searchicon" src="img/search.png" class="icon" alt="searchicon" style="width:6vw;height:6vw;">
@@ -219,16 +254,26 @@
 
             </form>
          </div>
-
-<!--
-    <div class="searchicon" style="background-image:url('img/icon/search.png')">
-         <label>  
-            
-             <input type="search" class="list-search form-input" placeholder="Search for Products">
-         </label>
-         </div>
-
 -->
+<div>
+   <div class="search-control">
+         <div class="display-flex search-bar ">
+            <input type="text" class="flex-stretch" id="search" data-role="none">
+            <img src="img/search.png" class="flex-none">
+
+         
+
+         </div>   
+
+
+</div>
+   <div class="display-flex filter-bar">
+                <h5 class="flex-none" data-activate="#sort-menu">Sort By</h5>
+            </div>
+   </div>
+
+
+
 
 
          <div class="overscroll">
@@ -327,6 +372,22 @@
          </ul>
       </footer>
 
+
+  
+  <div class="modal" id="sort-menu">
+            <div class="modal-back" data-deactivate="#sort-menu"></div>
+            <div class="modal-popup">
+               <div class="modal-head">Sort by:</div>
+               <div class="modal-body"><a href="#list-page" data-deactivate="#sort-menu">Name (A-Z)</a></div>
+               <div class="modal-body"><a href="#list-page" data-deactivate="#sort-menu">Name (Z-A)</a></div>
+               <div class="modal-body"><a href="#list-page" data-deactivate="#sort-menu">Breed</a></div>
+               <div class="modal-body"><a href="#list-page" data-deactivate="#sort-menu">Color</a></div>
+            </div>
+  </div>
+
+
+
+
      </section>
 
 
@@ -334,6 +395,7 @@
 
 
  <section data-role="page" id="add-dog-page">
+    <div data-role="main">
 
       <header data-role="header">
          <h1>Add New Dog</h1>
@@ -350,9 +412,9 @@
         
       </form>
     </div>
- <div id="list-add-modal">
+ <div id="list-add">
 
-      <form id="list-add-form" data-ajax="false" class="modal-popup">
+      <form id="list-add-form" data-ajax="false" class="listadd">
 
                     <div class="modal-body">
                <div class="form-control">
@@ -392,6 +454,7 @@
        </form>
      </div>
    </div>
+</div>
    </section>
 
 
@@ -572,7 +635,7 @@
       <header data-role="header">
          <h1>Dog Page</h1>
          <ul>
-            <li><a href="#list-page">&#10094;</a></li>
+            <li><a href="#" data-rel="back">&#10094;</a></li>
 
             <li class="flex-stretch"></li>
             <li >
