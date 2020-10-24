@@ -114,8 +114,9 @@
 
   <div class="search-control">
          <div class="display-flex search-bar ">
+            <img src="img/icon/search.svg" class="flex-none">
             <input type="text" class="flex-stretch" id="search" data-role="none" placeholder="Search for dog" >
-            <img src="img/search.png" class="flex-none">
+       
          </div>   
         
 
@@ -178,8 +179,8 @@
   --> 
 
 
-          <a href="#animal-profile-page"><img src="img/green.png" class="animal-list-img location-1"></a>
-         <a href="#animal-profile-page"><img src="img/green.png" class="animal-list-img location-2"></a>
+          <a href="#animal-profile-page"><img src="img/green.png" class="animal-list-img location-1"  ></a>
+         <a href="#animal-profile-page"><img src="img/green.png" class="animal-list-img location-2" ></a>
   
 
 </div>
@@ -208,12 +209,16 @@
             <div class="modal-back" data-deactivate="#pin-on-map"></div>
             <div class="modal-popup">
                <div class="modal-head">Pin a memory on the map</div>
-               <div class="modal-body"><a href="#recent-page" data-deactivate="#pin-on-map">Pin on Map</a></div>
-               <div class="modal-body"><a href="#recent-page" data-deactivate="#pin-on-map">Cancel</a></div>
+
+               <div class="modal-body settings-list">
+                  <div class="settings-item">
+                  <a href="#recent-page" data-deactivate="#pin-on-map">Pin on Map</a></div>
+
+               <div class="settings-item"><a href="#recent-page" data-deactivate="#pin-on-map">Cancel</a></div>
              
             </div>
       </div>
-
+   </div>
     
 
 
@@ -244,7 +249,7 @@
          </ul>
 
       </header>
-      <div data-role="main">
+<div data-role="main" style="display:flex; flex-direction:column;">
 
 <!--
          <div class="searchstyle"  style="width:calc(100% - 2em)">
@@ -255,11 +260,12 @@
             </form>
          </div>
 -->
-<div>
-   <div class="search-control">
+<div class="display-flex flex-align-center" style="flex:none">
+   <div class="flex-stretch search-control">
          <div class="display-flex search-bar ">
-            <input type="text" class="flex-stretch" id="search" data-role="none">
-            <img src="img/search.png" class="flex-none">
+              <img src="img/icon/search.svg" class="flex-none" >
+            <input type="text" class="flex-stretch" id="search" data-role="none" placeholder="Search for dog">
+          
 
          
 
@@ -267,15 +273,19 @@
 
 
 </div>
-   <div class="display-flex filter-bar">
-                <h5 class="flex-none" data-activate="#sort-menu">Sort By</h5>
+   <div class="filter-bar">
+                <h5 class="" data-activate="#sort-menu">Sort By</h5>
             </div>
    </div>
 
 
 
 
-
+<div style="
+    position: relative;
+    flex: 1 1 100%;
+    overflow: hidden;
+">
          <div class="overscroll">
          <div class="animallist" >
                <a href="#animal-profile-page" class="animallist-item">
@@ -364,6 +374,7 @@
             </div>
          </div>
       </div>
+ </div>
       <footer data-role="footer" data-template="#footer-template">
          <ul>
             <li><a href="#recent-page">Map</a></li>
@@ -405,13 +416,13 @@
       </header>
 
    <div class="overscroll" >
-    <div class="imagepicker imagepicker-replace thumbnail"  >
+    <label class="imagepicker imagepicker-replace thumbnail"  >
       <form>
   
          <input type='file' id="imagepicker1" data-role="none">
         
       </form>
-    </div>
+    </label>
  <div id="list-add">
 
       <form id="list-add-form" data-ajax="false" class="listadd">
@@ -774,7 +785,7 @@ Group: Non-Sporting Group
        <form>
   
           <label class="imagepicker imagepicker-replace thumbnail">
-           <input type='file' id="imagepicker2">
+           <input type='file' id="imagepicker2" data-role="none">
           </label>
       </form>
 </section>
@@ -803,15 +814,15 @@ Group: Non-Sporting Group
 <script type="text/template" id="footer-template">
    <ul>
       <li><a href="#recent-page">
-         <div class="nav-icon"><img src="img/icon/map.png" alt=""></div>
+         <div class="nav-icon"><img src="img/icon/map.svg" alt=""></div>
          <div class="nav-label">Map</div>
       </a></li>
       <li><a href="#list-page">
-         <div class="nav-icon"><img src="img/icon/list.png" alt=""></div>
+         <div class="nav-icon"><img src="img/icon/list.svg" alt=""></div>
          <div class="nav-label">List</div>
       </a></li>
       <li><a href="#user-profile-page">
-         <div class="nav-icon"><img src="img/icon/profile.png" alt=""></div>
+         <div class="nav-icon"><img src="img/icon/profile.svg" alt=""></div>
          <div class="nav-label">Profile</div>
       </a></li>
    </ul>
