@@ -17,8 +17,8 @@ left{
 
 
 :root {
-   --font-sans: Helvetica, Arial, sans-serif;
-   --font-serif: Cambria, Georgia, serif;
+   --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+   --font-mono: "Liberation Mono", "Courier New", monospace;
 
 
 
@@ -797,7 +797,27 @@ label.imagepicker.imagepicker-replace.thumbnail {
 
 
 
+/*Profile page dog list added */
 
-
-
+.grid.gap {
+    grid-gap: var(--gap-size);
+    gap: var(--gap-size);
+}
+.piggylist {
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* --gap-size: 1em; */
+}
+.piggylist {
+    margin: 1em 0;
+}
+.piggycol {
+    grid-column: span 6;
+}
+.grid.gap {
+    grid-gap: var(--gap-size);
+    gap: var(--gap-size);
+}
 
