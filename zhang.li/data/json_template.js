@@ -49,7 +49,6 @@
     breed:'{{random("Shiba Inu","Bichon frise","Bulldog","Cane corso","Dalmation","Cavalier-King-Charles-Spaniel","Russell-Terrier")}}',
     
    
-    
    
     
     description:'{{lorem(3, "sentences")}}',
