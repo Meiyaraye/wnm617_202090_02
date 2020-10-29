@@ -795,29 +795,10 @@ label.imagepicker.imagepicker-replace.thumbnail {
  border-style: inherit;
 
 
-
-
-/*Profile page dog list added */
-
-.grid.gap {
-    grid-gap: var(--gap-size);
-    gap: var(--gap-size);
-}
-.piggylist {
-}
-.grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    /* --gap-size: 1em; */
-}
-.piggylist {
-    margin: 1em 0;
-}
-.piggycol {
-    grid-column: span 6;
-}
-.grid.gap {
-    grid-gap: var(--gap-size);
-    gap: var(--gap-size);
 }
 
+
+
+div#set_icon {
+    padding-top: 0.5em;
+}
