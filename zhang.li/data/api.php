@@ -51,12 +51,12 @@ echo json_encode(
    makeQuery(
       makeConn(),
 
-    "SELECT * FROM track_animals WHERE type =?",['dog']),
+    //"SELECT * FROM track_animals WHERE breed =?",['dog']),
   
-     /*
+     
      "SELECT * FROM track_animals WHERE color = ? AND breed = ?",
       ['Golden','Shiba Inu'] 
    ),
-    */
+    
    JSON_NUMERIC_CHECK
 );
