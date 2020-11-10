@@ -11,6 +11,9 @@
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
 
+   <script src="js/functions.js"></script>
+   <script src="js/pages.js"></script>
+   <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
    <script src="js/app.js"></script>
 
@@ -29,12 +32,6 @@
       <div id="dogtracker" style="text-align:center">
          <h2>Dog Tracker</h2>
       </div>
-
-
-
-
-
-
 
 
          <form id="signin-form" data-ajax="false">
@@ -94,23 +91,13 @@
    <section data-role="page" id="recent-page">
 
 
-
-
  <header data-role="header" id="mappage-head">
-   <!--  <img src="img/logo.png" viewBox="0 0 10 10" class="icon" style="width:9vw;height:9vw;align-items: center">
-  -->
+
       <h1>Dog Tracker</h1> </header>
 
 
 <div data-role="main">   
   
-  <!--<div class="floater top right">
-           <div class="btn-circle" data-activate="#recent-add-modal">  </div>
-           
-            <img src="img/addpin.png" viewBox="0 0 10 10" class="icon" style="width:10vw;height:10vw;">
-       
-         </div>
-  -->
 
   <div class="search-control">
          <div class="display-flex search-bar ">
@@ -129,54 +116,6 @@
          </div>
 
 
-      <!--   <div class="modal" id="recent-add-modal">
-            <div class="modal-back" data-deactivate="#recent-add-modal"></div>
-            <div class="modal-drawer bottom">
-               <div class="modal-head">head</div>
-               <div class="modal-body">body</div>
-            </div>
-         </div>
-
-      -->
-
-
-<!--<div class="modal" id="recent-profile-modal">
-     
-
-   <div class="modal-drawer left">
-               <div class="modal-head" id="addnew-location-head">
-               <h3>Add New Location</h3>
-               </div>
-          
-  
-
-         <div class="modal-body">
-               <div class="form-control">
-                  <label for="list-add-name" class="form-label">Address</label>
-                  <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type the street address">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-type" class="form-label">City</label>
-                  <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Type the city">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-breed" class="form-label">States</label>
-                  <input id="list-add-breed" type="text" class="form-input" data-role="none" placeholder="Type the states">
-               </div>
-                <div class="form-control">
-                  <label for="list-add-breed" class="form-label">Zip Code</label>
-                  <input  type="text" class="form-input" data-role="none" placeholder="Type the Zip Code">
-               </div>
-                 <div class="form-control">
-               <input type="submit" class="form-button" value="SAVE" data-role="none" data-toggle="#recent-profile-modal">
-            </div>
-            
-         </div>
-
-  
-         </div>
-    </div>
-  --> 
 
 
           <a href="#animal-profile-page"><img src="img/green.png" class="animal-list-img location-1" alt="" ></a>
@@ -186,15 +125,7 @@
 </div>
 
 
-  
-
-
-
-
-
-
-
-
+ 
 
       <footer data-role="footer" data-template="#footer-template">>
          <ul>
@@ -221,25 +152,15 @@
    </div>
     
 
+</section>
 
+   
 
-
-   </section>
-
-   <section data-role="page" id="list-page">
+<section data-role="page" id="list-page">
       <header data-role="header">
          <h1>Dog List</h1>
 
-<!--
-         <ul>
-            <li class="flex-stretch" ></li>
-            <li><a href="#"  data-activate="#list-add-modal">
-               <img src="img/add.png" viewBox="0 0 14 14" class="icon" style="width:13vw;height:13vw;">
-
-            </a></li>
-         </ul>
-
--->  
+ 
        <ul>
             <li class="flex-stretch" ></li>
             <li> <a href="#add-dog-page" data-activate="#list-add-modal">
@@ -251,15 +172,7 @@
       </header>
 <div data-role="main" style="display:flex; flex-direction:column;">
 
-<!--
-         <div class="searchstyle"  style="width:calc(100% - 2em)">
-            <form class="dog-search" data-ajax="false">
-               <img id="searchicon" src="img/search.png" class="icon" alt="searchicon" style="width:6vw;height:6vw;">
-               <input type="search" data-role="none" class="search" placeholder="Search for dog"  >
 
-            </form>
-         </div>
--->
 <div class="display-flex flex-align-center" style="flex:none">
    <div class="flex-stretch search-control">
          <div class="display-flex search-bar ">
@@ -288,6 +201,8 @@
 
          <div class="overscroll">
          <div class="animallist" >
+
+           <!--
                <a href="#animal-profile-page" class="animallist-item">
                   <div class="animallist-image">
                      <img src="img/dog/1.jpg" alt="">
@@ -367,7 +282,8 @@
                      </div>
                   </div>
                </a>
-
+           
+           -->
 
 
 
@@ -470,9 +386,11 @@
 
 
 
-
-   <section data-role="page" id="user-profile-page">
+ <section data-role="page" id="user-profile-page">
       <div data-role="main">
+         <div class="profile"></div>
+      </div>
+  <!--
 
          <div class="display-flex user-profile-card space-around" >
             <div class="profile-image flex-none">
@@ -511,7 +429,7 @@
         
          </div>
 
-
+ -->
 
 <div style="
     position: relative;
@@ -519,63 +437,23 @@
     overflow: hidden;">
 
   <div class="overscroll">
-        <div class="animallist"> 
-          <h4> Dog Added</h4>
-               <a href="#animal-profile-page" class="animallist-item ui-link">
-                  <div class="animallist-image">
-                     <img src="img/dog/1.jpg" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Lily</div>
-                     <div class="animallist-type"><strong>Color: </strong> Golden</div>
-                     <div class="animallist-breed"><strong>Breed: </strong> Shiba Inu</div>
-                  </div>
-               </a>
-               <a href="#animal-profile-page" class="animallist-item ui-link">
-                  <div class="animallist-image">
-                     <img src="img/dog/Bichon-frise.jpg" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Ice cream</div>
-                     <div class="animallist-type"><strong>Color: </strong> White</div>
-                     <div class="animallist-breed"><strong>Breed: </strong> Bichon frise
-                     </div>
-                  </div>
-               </a>
-              <a href="#animal-profile-page" class="animallist-item ui-link">
-                  <div class="animallist-image">
-                     <img src="img/dog/Bulldog.jpg" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Lucky</div>
-                   <div class="animallist-type"><strong>Color: </strong> Golden and white</div>
-                     <div class="animallist-breed"><strong>Breed: </strong> Bulldog
-                     </div>
-                  </div>
-               </a>
-
-
-                       <a href="#animal-profile-page" class="animallist-item ui-link">
-                  <div class="animallist-image">
-                     <img src="img/dog/cane-corso.jpg" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Coal</div>
-                    <div class="animallist-type"><strong>Color: </strong> Black</div>
-                     <div class="animallist-breed"><strong>Breed: </strong> Cane corso
-                     </div>
-                  </div>
-               </a>
-       
+      
+          <h4> Recently Dog Added</h4>
+        
+       <img src="img/pin_on_map.png" alt="">
           
-         </div>
+       
      
        </div> 
 
 
 
      </div>
-    </div>
+
+
+
+
+  
      
       <footer data-role="footer" data-template="#footer-template"></footer>
       
@@ -721,9 +599,8 @@
 
 <div class="overscroll">
     <div data-role="main" class="display-flex flex-column">
-
-
-  
+       <div class="profile"> </div>
+  <!--
          <div class="profile-top" style="height:200px;width:300px; flex:none;background-image:url(img/dog/0.jpg)"></div>
          <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
            
@@ -745,6 +622,9 @@ Group: Non-Sporting Group
        <img src="img/pin_on_map.png" alt="">
 
             </div>
+
+
+      -->      
          </div>
       </div>
 

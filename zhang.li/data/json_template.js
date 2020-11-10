@@ -32,6 +32,8 @@
         '/fff/?text=' +
         this.username;
     },
+    
+    favorite_dog:'{{random("Shiba Inu","Bichon frise","Bulldog","Cane corso","Dalmation","Cavalier-King-Charles-Spaniel","Russell-Terrier")}}',
 
     date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
   }
@@ -49,14 +51,17 @@
     
     color:'{{random("White", "Golden","Golden and white","Black")}}',
     breed:'{{random("Shiba Inu","Bichon frise","Bulldog","Cane corso","Dalmation","Cavalier-King-Charles-Spaniel","Russell-Terrier")}}',
-    
+    location: '{{city()}}'+', '+ '{{state()}}',
    
    
     
     description:'{{lorem(3, "sentences")}}',
     
-    img: function(tags){
-      return 'https;//via.placeholder.com/400/' + tags.integer(700,999)+ '/fff/?text=' + this.name;
+    img: function(tags) {
+      return 'https://via.placeholder.com/400/' +
+        tags.integer(700,999) +
+        '/fff/?text=' +
+        this.name;
     }, 
     date_create:'{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
 

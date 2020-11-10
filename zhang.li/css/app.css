@@ -486,12 +486,12 @@ div#addnew-location-head {
 
 /* PROFILE */
 .profile-image img {
-      border-radius: 50%;
+    border-radius: 50%;
     width: calc(100vw - 15em);
     height: calc(100vw - 15em);
     object-fit: cover;
-    margin: 1em;
-    margin-top: 2em;
+    margin:0.5em;
+    margin-top: 1em;
 }
 .profile-body {
    padding:1em;
@@ -814,7 +814,19 @@ div#set_icon {
 
 /*profilepage added dog list*/
 
-
+.animallist-image2 img {
+    width: 100px;
+    height: 100px;
+    margin-left: 1em;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    /* margin-bottom: 0em; */
+    vertical-align: text-bottom;
+    border-radius: 3em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
 
 
 
