@@ -85,24 +85,13 @@ const makeUserProfile = templater(o=>`
             <p><span>Favorite dog:</span> ${o.favorite_dog}</p>
          </div>
 
-      <div style="
-    position: relative;
-    flex: 1 1 100%;
-    overflow: hidden;">
+   
 
-  <div class="overscroll">
       
           <h4> Recently Dog Added</h4>
         
        <img src="img/pin_on_map.png" alt="">
-          
-       
-     
-       </div> 
-
-
-
-     </div>
+ 
 
 `);
 
@@ -126,11 +115,7 @@ const makeAnimalProfile = templater(o=>`
                <p>Location: ${o.location}</p>
                <h4>Note:</h4>
 
-                 <p > ${o.description}
-            </p>
-
-       <h4>Pinned on map:</h4>
-       <img src="img/pin_on_map.png" alt="">
+              <p > ${o.description}</p>    
 
             </div>
 `);

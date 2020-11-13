@@ -25,7 +25,7 @@ function fetchAll($r) {
 
 
 // connection, prepared statement, parameters
-function makeQuery($c,$ps,$p) {
+function makeQuery($c,$ps,$p,$makeResults=true) {
    try {
       if(count($p)) {
          $stmt = $c->prepare($ps);
@@ -34,7 +34,7 @@ function makeQuery($c,$ps,$p) {
          $stmt = $c->query($ps);
       }
 
-      $r = fetchAll($stmt);
+      $r = $makeResults ? fetchAll($stmt) : [];
 
       return [
          "result"=>$r
@@ -46,16 +46,7 @@ function makeQuery($c,$ps,$p) {
       ];
    }
 }
-/*
-echo json_encode(
-   makeQuery(
-      makeConn(),
-      "SELECT * FROM track_animals_demo WHERE type = ? AND breed = ?",
-      ['cat','calico']
-   ),
-   JSON_NUMERIC_CHECK
-);
-*/
+
 
 function makeStatement($data) {
    $c = makeConn();
@@ -63,34 +54,49 @@ function makeStatement($data) {
    $p = @$data->params;
 
    switch($t) {
+
       case "users_all":
-         return makeQuery($c,"SELECT * FROM track_users_demo",[]);
+         return makeQuery($c,"SELECT * FROM `track_users`",[]);
       case "animals_all":
-         return makeQuery($c,"SELECT * FROM track_animals_demo",[]);
+         return makeQuery($c,"SELECT * FROM `track_animals`",[]);
       case "locations_all":
-         return makeQuery($c,"SELECT * FROM track_locations_demo",[]);
-     
+         return makeQuery($c,"SELECT * FROM `track_locations`",[]);
+
+
       case "user_by_id":
-         return makeQuery($c,"SELECT * FROM track_users_demo WHERE id = ?",$p);
+         return makeQuery($c,"SELECT * FROM `track_users` WHERE `id` = ?",$p);
       case "animal_by_id":
-         return makeQuery($c,"SELECT * FROM track_animals_demo WHERE id = ?",$p);
+         return makeQuery($c,"SELECT * FROM `track_animals` WHERE `id` = ?",$p);
       case "location_by_id":
-         return makeQuery($c,"SELECT * FROM track_locations_demo WHERE id = ?",$p);
+         return makeQuery($c,"SELECT * FROM `track_locations` WHERE `id` = ?",$p);
 
 
       case "animals_by_user_id":
-         return makeQuery($c,"SELECT * FROM track_animals_demo WHERE user_id = ?",$p);
+         return makeQuery($c,"SELECT * FROM `track_animals` WHERE `user_id` = ?",$p);
       case "locations_by_animal_id":
-         return makeQuery($c,"SELECT * FROM track_locations_demo WHERE animal_id = ?",$p);
+         return makeQuery($c,"SELECT * FROM `track_locations` WHERE `animal_id` = ?",$p);
 
-       case "check_signin":
-         return makeQuery($c,"SELECT * FROM track_users_demo WHERE username = ? AND password = md5(?)",$p);
 
+
+      case "check_signin":
+         return makeQuery($c,"SELECT * FROM `track_users` WHERE `username` = ? AND `password` = md5(?)",$p);
+
+
+      case "recent_locations":
+         return makeQuery($c,"SELECT * FROM
+            `track_animals` a
+            LEFT JOIN (
+               SELECT * FROM `track_locations`
+               ORDER BY `date_create` DESC
+            ) l
+            ON a.id = l.animal_id
+            WHERE user_id = ?
+            GROUP BY l.animal_id
+            ",$p);
 
       default: return ["error"=>"No Matched type"];
    }
 }
-
 
 
 
@@ -101,9 +107,3 @@ echo json_encode(
    makeStatement($data),
    JSON_NUMERIC_CHECK
 );
-
-
-
-
-
-

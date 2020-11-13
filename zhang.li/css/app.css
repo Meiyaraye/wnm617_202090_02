@@ -282,6 +282,7 @@ div#list-add {
 
 .search-control {
     margin: 10px 0;
+    position:relative;
 }
 .search-bar {
     
@@ -737,8 +738,32 @@ div#setting-icons {
 }
 
 
+.map {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
 
 
+
+.animal-top {
+  flex:none;
+  position:relative;
+  height:30vh;
+}
+.animal-top .profile {
+    display: flex;
+}
+.animal-top .profile-image img {
+    width: 30vw;
+    height: 30vw;
+}
+.animal-bottom {
+  flex:1 1 100%;
+  position:relative;
+}
 
 
 
@@ -810,23 +835,6 @@ div#set_icon {
 
 
 
-
-
-/*profilepage added dog list*/
-
-.animallist-image2 img {
-    width: 100px;
-    height: 100px;
-    margin-left: 1em;
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    /* margin-bottom: 0em; */
-    vertical-align: text-bottom;
-    border-radius: 3em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
 
 
 

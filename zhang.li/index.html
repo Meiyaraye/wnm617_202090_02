@@ -12,12 +12,18 @@
    <script src="lib/js/jquery-2.2.4.min.js"></script>
 
    <script src="js/functions.js"></script>
+  <script src="js/maps.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
    <script src="js/app.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+   
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNxGF_AcJkbCuMFHBZvv3eP8JUZiTKFos"defer>
+        
+      </script>
 
 </head>
 <body>
@@ -97,7 +103,7 @@
 
 
 <div data-role="main">   
-  
+     <div class="map"></div>
 
   <div class="search-control">
          <div class="display-flex search-bar ">
@@ -202,91 +208,6 @@
          <div class="overscroll">
          <div class="animallist" >
 
-           <!--
-               <a href="#animal-profile-page" class="animallist-item">
-                  <div class="animallist-image">
-                     <img src="img/dog/1.jpg" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Lily</div>
-                     <div class="animallist-type"><strong>Color: </strong> Golden</div>
-                     <div class="animallist-breed"><strong>Breed: </strong> Shiba Inu</div>
-                  </div>
-               </a>
-               <a href="#animal-profile-page" class="animallist-item">
-                  <div class="animallist-image">
-                     <img src="img/dog/Bichon-frise.jpg" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Ice cream</div>
-                     <div class="animallist-type"><strong>Color: </strong> White</div>
-                     <div class="animallist-breed"><strong>Breed: </strong> Bichon frise
-                     </div>
-                  </div>
-               </a>
-               <a href="#animal-profile-page" class="animallist-item">
-                  <div class="animallist-image">
-                     <img src="img/dog/Bulldog.jpg" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Lucky</div>
-                   <div class="animallist-type"><strong>Color: </strong> Golden and white</div>
-                     <div class="animallist-breed"><strong>Breed: </strong> Bulldog
-                     </div>
-                  </div>
-               </a>
-
-
-                       <a href="#animal-profile-page" class="animallist-item">
-                  <div class="animallist-image">
-                     <img src="img/dog/cane-corso.jpg" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Coal</div>
-                    <div class="animallist-type"><strong>Color: </strong> Black</div>
-                     <div class="animallist-breed"><strong>Breed: </strong> Cane corso
-                     </div>
-                  </div>
-               </a>
-               <a href="#animal-profile-page" class="animallist-item">
-                  <div class="animallist-image">
-                     <img src="img/dog/Dalmation-Dog.jpg" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Sam</div>
-                     <div class="animallist-type"><strong>Color: </strong> Black and white</div>
-                     <div class="animallist-breed"><strong>Breed: </strong> Dalmation
-                     </div>
-                  </div>
-               </a>
-               <a href="#animal-profile-page" class="animallist-item">
-                  <div class="animallist-image">
-                     <img src="img/dog/Cavalier-King-Charles-Spaniel.jpg" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Hamburger</div>
-                    <div class="animallist-type"><strong>Color: </strong> Golden and white</div>
-                     <div class="animallist-breed"><strong>Breed: </strong> Cavalier-King-Charles-Spaniel
-                     </div>
-                  </div>
-               </a>
-
-                   <a href="#animal-profile-page" class="animallist-item">
-                  <div class="animallist-image">
-                     <img src="img/dog/Russell-Terrier.jpg" alt="">
-                  </div>
-                  <div class="animallist-description">
-                     <div class="animallist-name">Taco</div>
-                    <div class="animallist-type"><strong>Color: </strong> Golden and white</div>
-                     <div class="animallist-breed"><strong>Breed: </strong> Russell-Terrier
-                     </div>
-                  </div>
-               </a>
-           
-           -->
-
-
-
             </div>
          </div>
       </div>
@@ -390,70 +311,7 @@
       <div data-role="main">
          <div class="profile"></div>
       </div>
-  <!--
 
-         <div class="display-flex user-profile-card space-around" >
-            <div class="profile-image flex-none">
-               <img src="img/user-profile.jpg" alt="" class="profile-image">
-            </div>
-
-
-
-
-
-          
-           <div class="user-detail flex-stretch">
-               <h3 id="user-name">Jane</h3>
-               <p id="user-location">Location: San Francisco</p>
-             </div>    
-
-           <div class="flex-stretch" id="set_icon">
-           <a href="#settings-page" >
-               <img src="img/setting.svg" alt="add" class="icon" style="width:13vw;height:13vw;">
-
-            </a>
-       
-          </div>
-
-         </div>
-
-
-  
-
-         <div class="user-profile-detail">
-         <h4 id="my-information">My Information:</h4>
-            <p><span>Gender:</span> Female</p>
-            <p><span>Email:</span> Jane@gmail.com</p>
-            <p><span>Favorite dog:</span> Bulldog</p>
-          
-        
-         </div>
-
-
-
-<div style="
-    position: relative;
-    flex: 1 1 100%;
-    overflow: hidden;">
-
-  <div class="overscroll">
-      
-          <h4> Recently Dog Added</h4>
-        
-       <img src="img/pin_on_map.png" alt="">
-          
-       
-     
-       </div> 
-
-
-
-     </div>
-
- -->
-
-
-  
      
       <footer data-role="footer" data-template="#footer-template"></footer>
       
@@ -598,35 +456,16 @@
       </header>       
 
 <div class="overscroll">
-    <div data-role="main" class="display-flex flex-column">
-       <div class="profile"> </div>
-  <!--
-         <div class="profile-top" style="height:200px;width:300px; flex:none;background-image:url(img/dog/0.jpg)"></div>
-         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
-           
-               <h3>Name: Lily</h3>
-               <p>Color: Golden</p>
-               <p>Breed: Shiba Inu</p>
-               <p>Location: Southgame Park,Hayward, CA 94545</p>
-               <p>Note:</p>
-
-                 <textarea >Alert, Active, Attentive
-AKC Breed Popularity: Ranks 44 of 196
-Height: 14.5-16.5 inches (male), 13.5-15.5 inches (female)
-Weight: 23 pounds (male), 17 pounds (female)
-Life Expectancy: 13-16 years
-Group: Non-Sporting Group
-            </textarea>
-
-       <h5>Pinned on map:</h5>
-       <img src="img/pin_on_map.png" alt="">
-
-            </div>
-
-
-      -->      
+  <div data-role="main" class="display-flex flex-column">
+         <div class="animal-top">
+            <div class="map"></div>
          </div>
+         <div class="animal-bottom">
+            <div class="profile"></div>
+         </div>
+         
       </div>
+</div>
 
 
 
