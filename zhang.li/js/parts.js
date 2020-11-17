@@ -78,21 +78,20 @@ const makeUserProfile = templater(o=>`
             </a>
           </div>
          </div>
+        
          <div class="user-profile-detail">
+
          <h4 id="my-information">My Information:</h4>
             <p><span>Gender:</span> ${o.gender}</p>
             <p><span>Email:</span> ${o.email}</p>
             <p><span>Favorite dog:</span> ${o.favorite_dog}</p>
-         </div>
 
-   
 
-      
-          <h4> Recently Dog Added</h4>
+        <h4> Recently Dog Added</h4>
         
-       <img src="img/pin_on_map.png" alt="">
- 
 
+          
+         </div>
 `);
 
 

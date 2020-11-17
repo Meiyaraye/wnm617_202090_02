@@ -116,6 +116,25 @@ function makeStatement($data) {
             ",$p);
 
 
+    
+/*
+
+   case "recent_animals":
+         return makeQuery($c,"SELECT * FROM
+            `track_animals` a
+            LEFT JOIN (
+               SELECT * FROM `track_users`u
+               ORDER BY `date_create` DESC
+            ) l
+            ON a.id = u.animal_id
+            WHERE user_id = ?
+            GROUP BY u.animal_id
+            ",$p);
+
+*/
+
+
+
       default: return ["error"=>"No Matched type"];
    }
 }
