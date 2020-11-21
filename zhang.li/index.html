@@ -111,8 +111,6 @@
             <input type="text" class="flex-stretch" id="search" data-role="none" placeholder="Search for dog" >
        
          </div>   
-        
-
    </div>
 
 
@@ -122,13 +120,25 @@
          </div>
 
 
-<!--
+   
+         <div class="modal" id="recent-animal-modal">
+            <div class="modal-drawer bottom">
+               <div class="modal-close-floater top right">
+                  <div class="btn-circle" data-deactivate="#recent-animal-modal">&times;</div>
+               </div>
+               <div class="modal-head"></div>
+               <div class="modal-body"></div>
+            </div>
+         </div>
 
-          <a href="#animal-profile-page"><img src="img/green.png" class="animal-list-img location-1" alt="" ></a>
-         <a href="#animal-profile-page"><img src="img/green.png" class="animal-list-img location-2" alt=""></a>
-  -->
+
+
 
 </div>
+
+
+
+       
 
 
  
@@ -311,9 +321,15 @@
       <div data-role="main">
          <div class="profile"></div>
 
-
-        <!--   <div class="map"></div>   -->
-
+         <div class="grid gap">
+            <div class="col-sm-6"> 
+               <img src="img/dog1.png">
+            </div>
+            <div class="col-sm-6"> 
+               <img src="img/dog1.png">
+            </div>
+            
+         </div>
 
       </div>
 
@@ -336,14 +352,14 @@
       </header>
       <div data-role="main">
          <ul class="settings-list">
-            <li class="settings-item"><a href="#profile-settings-page">Profile Settings</a></li>
+            <li class="settings-item"><a href="#user-profile-edit-page">Profile Settings</a></li>
             <li class="settings-item"><a href="#password-settings-page">Change Password</a></li>
             <li class="settings-item"><a href="#" class="js-logout">Logout</a></li>
          </ul>
       </div>
    </section>
 
-   <section data-role="page" id="profile-settings-page">
+   <section data-role="page" id="user-profile-edit-page">
       <header data-role="header">
          <h1>Profile Settings</h1>
          <ul>
@@ -367,32 +383,6 @@
             </div>
 
          </div>
-
-
-
-
-         <form id="profile-form" data-ajax="false">
-            <div class="form-control">
-               <label for="profile-username" class="form-label">Username</label>
-               <input id="profile-username" type="text" class="form-input" data-role="none" placeholder="Type your username" value="Jane">
-            </div>
-            <div class="form-control">
-               <label for="profile-location" class="form-label">Location</label>
-               <input id="profile-location" type="text" class="form-input" data-role="none" placeholder="Type your location" value="San Francisco">
-            </div>
-            <div class="form-control">
-               <label for="profile-email" class="form-label">Email</label>
-               <input id="profile-email" type="text" class="form-input" data-role="none" placeholder="Type your email" value="Jane@gmail.com">
-            </div>
-
-                <div class="form-control">
-               <label for="profile-favorite" class="form-label">Favorite Dog</label>
-               <input id="profile-favorite" type="text" class="form-input" data-role="none" placeholder="Type your favorite" value="Bulldog">
-            </div>
-
-
-
-         </form>
 
 
           <div class="form-control">
@@ -478,7 +468,7 @@
 <div class="modal" id="dog-menu" style="top: 0; z-index: 6;">
          <div class="modal-back" data-deactivate="#dog-menu"></div>
          <div class="modal-popup">
-            <div class="modal-head"><div><a href="#edit-dog-page">Edit Dog Profile</a></div></div>
+            <div class="modal-head"><div><a href="#animal-profile-edit-page">Edit Dog Profile</a></div></div>
             <div class="modal-foot"><a href="#list-page">Delete Dog Profile</a></div>
          </div>
       </div>
@@ -492,18 +482,32 @@
 
 
 
-   <section data-role="page" id="edit-dog-page">
+   <section data-role="page" id="animal-profile-edit-page">
 
 
       <header data-role="header">
-         <h1>Edit Dog Profile</h1>
+         <h1>Dog Info</h1>
          <ul>
             <li><a href="#" data-rel="back">&#10094;</a></li>
          </ul>
       </header>
-      <div class="overscroll">
+
+
+<div class="overscroll">
        
-         <div data-role="main" style="padding:1em">
+  <div data-role="main" class="display-flex flex-column">
+        
+         <form id="animal-edit-form" data-ajax="false" style="padding:1em"></form>
+
+         <a href="#animal-profile-page" class="form-button">SAVE</a>
+      
+
+
+   </dvi>
+ </div>
+
+<!--
+   <div data-role="main" style="padding:1em">
 
          <div class="display-flex user-profile-card space-around" >
             <div class="profile-image flex-none">
@@ -553,16 +557,16 @@ Group: Non-Sporting Group
          </form>
 
 
-          <div class="form-control">
-              <a href="#animal-profile-page" class="form-button">SAVE</a>
-            </div>
+      
 
 
       </div>
+ -->  
+     
 
-      </div>
 </section>
   
+
 
 
 <section data-role="page" id="imagepicker0">

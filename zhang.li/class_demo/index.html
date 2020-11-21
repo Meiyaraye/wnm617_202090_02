@@ -84,28 +84,31 @@
       <div data-role="main">
          <div class="map"></div>
 
-         <div class="floater top right">
+         <!-- <div class="floater top right">
             <div class="btn-circle" data-activate="#recent-add-modal" data-deactivate="#recent-profile-modal">&equiv;</div>
          </div>
          <div class="floater bottom right">
             <div class="btn-circle" data-toggle="#recent-profile-modal">&plus;</div>
          </div>
+      -->
 
 
-         <div class="modal" id="recent-add-modal">
-            <div class="modal-back" data-deactivate="#recent-add-modal"></div>
+         <div class="modal" id="recent-animal-modal">
             <div class="modal-drawer bottom">
+               <div class="modal-close-floater top right">
+                  <div class="btn-circle" data-deactivate="#recent-animal-modal">&times;</div>
+               </div>
                <div class="modal-head">head</div>
-               <div class="modal-body">body</div>
+               <div class="modal-body"></div>
             </div>
          </div>
 
-         <div class="modal" id="recent-profile-modal">
+         <!-- <div class="modal" id="recent-profile-modal">
             <div class="modal-drawer left">
                <div class="modal-head">head</div>
                <div class="modal-body">body</div>
             </div>
-         </div>
+         </div> -->
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
       
@@ -196,14 +199,14 @@
       </header>
       <div data-role="main">
          <ul class="settings-list">
-            <li class="settings-item"><a href="#profile-settings-page">Profile Settings</a></li>
+            <li class="settings-item"><a href="#user-profile-edit-page">Profile Settings</a></li>
             <li class="settings-item"><a href="#password-settings-page">Change Password</a></li>
             <li class="settings-item"><a href="#" class="js-logout">Logout</a></li>
          </ul>
       </div>
    </section>
 
-   <section data-role="page" id="profile-settings-page">
+   <section data-role="page" id="user-profile-edit-page">
       <header data-role="header">
          <h1>Profile Settings</h1>
          <ul>
@@ -211,23 +214,9 @@
             <li class="flex-stretch"></li>
             <li><a href="#" data-rel="back">Save</a></li>
          </ul>
+
       </header>
-      <div data-role="main" style="padding:1em">
-         <form id="profile-form" data-ajax="false">
-            <div class="form-control">
-               <label for="profile-username" class="form-label">Username</label>
-               <input id="profile-username" type="text" class="form-input" data-role="none" placeholder="Type your username" value="kenbro">
-            </div>
-            <div class="form-control">
-               <label for="profile-name" class="form-label">Full Name</label>
-               <input id="profile-name" type="text" class="form-input" data-role="none" placeholder="Type your name" value="Kenneth Jenkins">
-            </div>
-            <div class="form-control">
-               <label for="profile-email" class="form-label">Email</label>
-               <input id="profile-email" type="text" class="form-input" data-role="none" placeholder="Type your email" value="ken@neth.com">
-            </div>
-         </form>
-      </div>
+      <div data-role="main"></div>
    </section>
 
    <section data-role="page" id="password-settings-page">
@@ -273,7 +262,13 @@
       <header data-role="header">
          <h1>Animal Page</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back">
+               <img src="img/icon/left.svg" alt="" class="icon">
+            </a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#animal-profile-edit-page">
+               <img src="img/icon/pencil.svg" alt="" class="icon">
+            </a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
@@ -284,6 +279,20 @@
             <div class="profile"></div>
          </div>
          
+      </div>
+   </section>
+
+   <section data-role="page" id="animal-profile-edit-page">
+      <header data-role="header">
+         <h1>Animal Info</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-column">
+         <form id="animal-edit-form" data-ajax="false" style="padding:1em"></form>
       </div>
    </section>
 

@@ -1,7 +1,7 @@
-
-
 // Document Ready
 $(()=>{
+
+   console.dir($("#user-edit-form")[0])
 
    checkUserId();
 
@@ -17,7 +17,9 @@ $(()=>{
          case 'recent-page': RecentPage(); break;
          case 'list-page': ListPage(); break;
          case 'user-profile-page': UserProfilePage(); break;
+         case 'user-profile-edit-page': UserProfileEditPage(); break;
          case 'animal-profile-page': AnimalProfilePage(); break;
+         case 'animal-profile-edit-page': AnimalProfileEditPage(); break;
       }
    })
 
@@ -44,6 +46,10 @@ $(()=>{
    .on("click",".js-animal-jump",function(e){
       sessionStorage.animalId = $(this).data("id");
       $.mobile.navigate("#animal-profile-page");
+   })
+   .on("click",".js-location-jump",function(e){
+      sessionStorage.locationId = $(this).data("id");
+      $.mobile.navigate("#location-profile-page");
    })
 
 

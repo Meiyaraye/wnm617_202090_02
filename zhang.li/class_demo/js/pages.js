@@ -20,7 +20,30 @@ const RecentPage = async() => {
    //console.log(map_el.data('map'))
 
    makeMarkers(map_el,valid_animals);
+   // makeMarkers(map_el,[]);
 
+   map_el.data("markers").forEach((o,i)=>{
+      o.addListener("click",function(){
+         // console.log("honk")
+
+         /*
+         // SIMPLE EXAMPLE
+         sessionStorage.animalId = valid_animals[i].animal_id;
+         $.mobile.navigate("#animal-profile-page");
+         */
+
+         // INFOWINDOW EXAMPLE
+         // map_el.data("infoWindow")
+         //    .open(map_el.data("map"),o);
+         // map_el.data("infoWindow")
+         //    .setContent(makeAnimalPopup(valid_animals[i]));
+
+         // ACTIVATE EXAMPLE
+         $("#recent-animal-modal").addClass("active");
+         $("#recent-animal-modal .modal-body")
+            .html(makeAnimalPopup(valid_animals[i]))
+      })
+   })
 }
 
 
@@ -56,6 +79,17 @@ const UserProfilePage = async() => {
    $("#user-profile-page .profile")
       .html(makeUserProfile(d.result));
 }
+const UserProfileEditPage = async() => {
+   query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   }).then(d=>{
+      console.log(d)
+
+      $("#user-profile-edit-page [data-role='main']")
+         .html(makeUserProfileUpdateForm(d.result[0]));
+   });
+}
 
 
 
@@ -84,5 +118,14 @@ const AnimalProfilePage = async() => {
    
 }
 
+const AnimalProfileEditPage = async() => {
+   query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   }).then(d=>{
+      console.log(d)
 
-
+      $("#animal-edit-form")
+         .html(makeAnimalProfileUpdateForm(d.result[0]));
+   });
+}

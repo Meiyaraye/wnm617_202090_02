@@ -363,6 +363,22 @@ a:hover {
 
 
 
+.modal-close-floater {
+    position: absolute;
+}
+.modal-close-floater.right {
+    right: 1em;
+}
+.modal-close-floater.top {
+    top: -1em;
+    transform: translateY(-100%);
+}
+
+
+
+
+
+
 
 
 /* PROFILE */
@@ -491,4 +507,18 @@ a:hover {
 .animal-bottom {
   flex:1 1 100%;
   position:relative;
+}
+
+
+
+
+
+
+
+
+
+.icon {
+   width:1.5em;
+   height:1.5em;
+   vertical-align: middle;
 }

@@ -372,6 +372,29 @@ img.flex-none {
 }
 
 
+
+
+
+
+
+.modal-close-floater {
+    position: absolute;
+}
+.modal-close-floater.right {
+    right: 1em;
+}
+.modal-close-floater.top {
+    top: -1em;
+    transform: translateY(-100%);
+}
+
+
+
+
+
+
+
+
 /* MODAL DRAWER */
 .modal-drawer {
     position: absolute;
@@ -821,6 +844,25 @@ label.imagepicker.imagepicker-replace.thumbnail {
 
 div#set_icon {
     padding-top: 0.5em;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  --gap-size: 2em;
+
+  }
+
+.grid.gap{
+  grid-gap:var(--gap-size);
+  gap:var(--gap-size);
+}
+
+
+@media (min-width: 320px) {
+
+  .col-sm-6{grid-column: span 6;}
+  
 }
 
 
