@@ -80,6 +80,7 @@ const makeAnimalPopup = o=>`
    <div><strong>Breed</strong>: ${o.breed}</div>
 </div>
 </div>
+<div> </div>
 <div>
 <a href="#" class="form-button js-animal-jump" data-id="${o.animal_id}">Visit</a> 
 </div>
@@ -87,15 +88,16 @@ const makeAnimalPopup = o=>`
 
 
 
-const FormControl = ({namespace,name,displayname,type,placeholder,value}) => {
+const FormControl = ({namespace,name,displayname,type,placeholder,textarea,value}) => {
    return `<div class="form-control">
       <label for="${namespace}-${name}" class="form-label">${displayname}</label>
-      <input id="${namespace}-${name}" type="${type}" class="form-input" data-role="none" placeholder="${placeholder}" value="${value}">
-   </div>`;
+      <input id="${namespace}-${name}" type="${type}" class="form-input" data-role="none" placeholder="${placeholder}" textarea="${textarea}" value="${value}">
+   </div>`; 
 }
 
 
 const makeAnimalProfileUpdateForm = o => `
+
 ${FormControl({
    namespace:"animal-edit",
    name:"name",
@@ -117,9 +119,18 @@ ${FormControl({
    name:"breed",
    displayname:"Breed",
    type:"text",
-   placeholder:"Type Animal Breed",
+   placeholder:"Type An Animal Breed",
    value:o.breed
 })}
+${FormControl({
+   namespace:"animal-edit",
+   name:"location",
+   displayname:"Location",
+   type:"text",
+   placeholder:"Type An Animal Location",
+   value:o.location
+})}
+
 `;
 
 
@@ -143,11 +154,27 @@ ${FormControl({
 })}
 ${FormControl({
    namespace:"user-edit",
+   name:"gender",
+   displayname:"Gender",
+   type:"text",
+   placeholder:"Type Your Gender",
+   value:o.gender
+})}
+${FormControl({
+   namespace:"user-edit",
    name:"email",
    displayname:"Email",
    type:"text",
    placeholder:"Type Your Email",
    value:o.email
+})}
+${FormControl({
+   namespace:"user-edit",
+   name:"favorite dog",
+   displayname:"Favorite Dog",
+   type:"text",
+   placeholder:"Type Your favorite Dog",
+   value:o.favorite_dog
 })}
 </form>
 `;

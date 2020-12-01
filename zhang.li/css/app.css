@@ -866,6 +866,11 @@ div#set_icon {
 }
 
 
+#recent-animal-modal {
+    margin: 1em;
+    width: calc(100% - 2em);
+}
+
 
 
 

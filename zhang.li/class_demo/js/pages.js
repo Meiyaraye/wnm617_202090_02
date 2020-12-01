@@ -48,8 +48,6 @@ const RecentPage = async() => {
 
 
 
-
-
 // async and await
 const ListPage = async() => {
    let d = await query({
@@ -60,8 +58,15 @@ const ListPage = async() => {
    console.log(d)
 
    $("#list-page .animallist")
-      .html(makeAnimalList(d.result));
+      .html(d.result.length?makeAnimalList(d.result):'Hey Dummy, add an animal.');
 }
+
+
+
+
+
+
+
 
 
 
@@ -79,17 +84,23 @@ const UserProfilePage = async() => {
    $("#user-profile-page .profile")
       .html(makeUserProfile(d.result));
 }
-const UserProfileEditPage = async() => {
+const UserEditPage = async() => {
    query({
       type:'user_by_id',
       params:[sessionStorage.userId]
    }).then(d=>{
       console.log(d)
 
-      $("#user-profile-edit-page [data-role='main']")
-         .html(makeUserProfileUpdateForm(d.result[0]));
+      $("#user-edit-form")
+         .html(makeUserEditForm(d.result[0]));
    });
 }
+
+
+
+
+
+
 
 
 
@@ -118,7 +129,7 @@ const AnimalProfilePage = async() => {
    
 }
 
-const AnimalProfileEditPage = async() => {
+const AnimalEditPage = async() => {
    query({
       type:'animal_by_id',
       params:[sessionStorage.animalId]
@@ -126,6 +137,43 @@ const AnimalProfileEditPage = async() => {
       console.log(d)
 
       $("#animal-edit-form")
-         .html(makeAnimalProfileUpdateForm(d.result[0]));
+         .html(makeAnimalEditForm(d.result[0]));
    });
+}
+
+
+
+
+
+
+
+
+
+
+
+const LocationAddPage = async() => {
+   let map_el = await makeMap("#location-add-page .map");
+   makeMarkers(map_el,[]);
+
+   let map = map_el.data("map");
+
+   map.addListener("click",function(e){
+      console.log(e, map.getCenter())
+
+      let posFromClick = {
+         lat:e.latLng.lat(),
+         lng:e.latLng.lng(),
+         icon:"img/icon/marker.svg"
+      };
+      let posFromCenter = {
+         lat:map.getCenter().lat(),
+         lng:map.getCenter().lng(),
+         icon:"img/icon/marker.svg"
+      };
+
+      $("#location-add-lat").val(posFromClick.lat)
+      $("#location-add-lng").val(posFromClick.lng)
+
+      makeMarkers(map_el,[posFromClick])
+   })
 }

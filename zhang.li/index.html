@@ -12,6 +12,7 @@
    <script src="lib/js/jquery-2.2.4.min.js"></script>
 
    <script src="js/functions.js"></script>
+   <script src="js/forms.js"></script>
   <script src="js/maps.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
@@ -179,7 +180,7 @@
  
        <ul>
             <li class="flex-stretch" ></li>
-            <li> <a href="#add-dog-page" data-activate="#list-add-modal">
+            <li> <a href="#animal-add-page" data-activate="#list-add-modal">
                <img src="img/add.png" alt="add" class="icon" style="width:13vw;height:13vw;">
 
             </a></li>
@@ -252,7 +253,7 @@
 
 
 
- <section data-role="page" id="add-dog-page">
+ <section data-role="page" id="animal-add-page">
     <div data-role="main">
 
       <header data-role="header">
@@ -370,7 +371,7 @@
       </header>
       <div data-role="main" style="padding:1em">
 
-
+     <!--
           <div class="display-flex user-profile-card space-around" >
             <div class="profile-image flex-none">
                <img src="img/user-profile.jpg" alt="" class="profile-image">
@@ -383,11 +384,17 @@
             </div>
 
          </div>
+      -->
+
+       <form id="user-edit-form" data-ajax="false" style="padding:1em"></form>
 
 
           <div class="form-control">
               <a href="#user-profile-page" class="form-button">SAVE</a>
             </div>
+
+         
+       
 
 
       </div>
@@ -454,6 +461,9 @@
   <div data-role="main" class="display-flex flex-column">
          <div class="animal-top">
             <div class="map"></div>
+            <div class="floater bottom right">
+               <a href="#location-add-page" class="btn-circle">&plus;</a>
+            </div>
          </div>
          <div class="animal-bottom">
             <div class="profile"></div>
@@ -499,7 +509,7 @@
         
          <form id="animal-edit-form" data-ajax="false" style="padding:1em"></form>
 
-         <a href="#animal-profile-page" class="form-button">SAVE</a>
+         <a href="#list-page" class="form-button">SAVE</a>
       
 
 
