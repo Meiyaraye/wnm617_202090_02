@@ -55,11 +55,13 @@ const ListPage = async() => {
       params:[sessionStorage.userId]
    });
 
+   $("#list-page .filter-list").html(makeFilterList(d.result))
+
    console.log(d)
 
-   $("#list-page .animallist")
-      .html(d.result.length?makeAnimalList(d.result):'You have no animal on the list, please add an animal.');
+   drawAnimalList(d.result);
 }
+
 
 
 
@@ -163,12 +165,12 @@ const LocationAddPage = async() => {
       let posFromClick = {
          lat:e.latLng.lat(),
          lng:e.latLng.lng(),
-         icon:"img/icon/marker.svg"
+         icon:"img/marker.svg"
       };
       let posFromCenter = {
          lat:map.getCenter().lat(),
          lng:map.getCenter().lng(),
-         icon:"img/icon/marker.svg"
+         icon:"img/marker.svg"
       };
 
       $("#location-add-lat").val(posFromClick.lat)

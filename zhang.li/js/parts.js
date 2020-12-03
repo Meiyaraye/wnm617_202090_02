@@ -1,4 +1,8 @@
 
+const drawAnimalList = (a,empty_phrase='Please add an animal.') => {
+   $("#list-page .animallist").html(a.length?makeAnimalList(a):);
+}
+
 
 const makeAnimalList = templater(o=>`
    <div class="animallist-item js-animal-jump" data-id="${o.id}">
@@ -67,6 +71,9 @@ const makeAnimalProfile = templater(o=>`
               <p > ${o.description}</p>    
 
             </div>
+   <div>
+      <a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a>
+   </div>
 `);
 
 const makeAnimalPopup = o=>`
@@ -96,7 +103,8 @@ const FormControl = ({namespace,name,displayname,type,placeholder,textarea,value
 }
 
 
-const makeAnimalProfileUpdateForm = o => `
+
+const makeAnimalEditForm = o => `
 
 ${FormControl({
    namespace:"animal-edit",
@@ -130,11 +138,15 @@ ${FormControl({
    placeholder:"Type An Animal Location",
    value:o.location
 })}
+<div class="form-control">
+   <label for="animal-edit-description" class="form-label">Description</label>
+   <textarea id="animal-edit-description" class="form-input" data-role="none" placeholder="Type animal description">${o.description}</textarea>
+</div>
 
 `;
 
 
-const makeUserProfileUpdateForm = o => `
+const makeUserEditForm = o => `
 <form id="user-edit-form" data-ajax="false" style="padding:1em">
 ${FormControl({
    namespace:"user-edit",
@@ -176,6 +188,21 @@ ${FormControl({
    placeholder:"Type Your favorite Dog",
    value:o.favorite_dog
 })}
-</form>
+
 `;
 
+
+
+
+const filterList = (animals,type) => {
+   let a = [...(new Set(animals.map(o=>o[type])))];
+   return templater(o=>`<div class="filter" data-field="${type}" data-value="${o}">${o[0].toUpperCase()+o.substr(1)}</div>`)(a);
+}
+
+const makeFilterList = (animals) => {
+   return `
+   <div class="filter" data-field="type" data-value="all">All</div> | 
+   ${filterList(animals,'color')} | 
+   ${filterList(animals,'breed')} 
+   `;
+}

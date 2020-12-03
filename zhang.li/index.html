@@ -3,6 +3,14 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
+
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+
+   <link rel="apple-touch-icon" href="./site_logo.png">
+   <link rel="icon" href="./site_logo.png">
+
+
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title> Dog Tracker</title>
 
@@ -72,7 +80,7 @@
 
              <div class="form-control">
                <label for="signup-email" class="form-label">Email</label>
-               <input id="signup-email" type="text" class="form-input" data-role="none" placeholder="Type your email">
+               <input id="signup-email" type="email" class="form-input" data-role="none" placeholder="Type your email">
             </div>
 
 
@@ -85,7 +93,7 @@
                <input id="signup-password-confirm" type="password" class="form-input" data-role="none" placeholder="Type your password">
             </div>
             <div class="form-control">
-               <a href="#recent-page" class="form-button">Sign Up</a>
+               <input type="submit" class="form-button" value="Sign Up" data-role="none">
             </div>
             <div class="form-control signin-alt">
                Already have an account?
@@ -187,6 +195,19 @@
          </ul>
 
       </header>
+
+
+
+ <header data-role="header">
+         <div class="filter-list">
+            <div class="filter" data-field="type" data-value="cat">Color</div>
+            <div class="filter" data-field="type" data-value="dog">Breed</div>
+           
+         </div>
+</header>
+
+
+
 <div data-role="main" style="display:flex; flex-direction:column;">
 
 
@@ -196,7 +217,9 @@
               <img src="img/icon/search.svg" class="flex-none" alt="">
             <input type="text" class="flex-stretch" data-role="none" placeholder="Search for dog">
           
-
+          <div class="overscroll">
+            <div class="animallist"></div>
+          </div>
          
 
          </div>   
@@ -237,8 +260,7 @@
             <div class="modal-back" data-deactivate="#sort-menu"></div>
             <div class="modal-popup">
                <div class="modal-head">Sort by:</div>
-               <div class="modal-body"><a href="#list-page" data-deactivate="#sort-menu">Name (A-Z)</a></div>
-               <div class="modal-body"><a href="#list-page" data-deactivate="#sort-menu">Name (Z-A)</a></div>
+              
                <div class="modal-body"><a href="#list-page" data-deactivate="#sort-menu">Breed</a></div>
                <div class="modal-body"><a href="#list-page" data-deactivate="#sort-menu">Color</a></div>
             </div>
@@ -274,37 +296,38 @@
  <div id="list-add">
 
       <form id="list-add-form" data-ajax="false" class="listadd">
+      <input type="hidden" id="animal-add-destination" value="#list-page">
 
                     <div class="modal-body">
                <div class="form-control">
-                  <label for="list-add-name" class="form-label">Name</label>
-                  <input  type="text" class="form-input" data-role="none" placeholder="Type dog name">
+                  <label for="animal-add-name" class="form-label">Name</label>
+                 <input id="animal-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
                </div>
                <div class="form-control">
-                  <label for="list-add-type" class="form-label">Location</label>
-                  <input  type="text" class="form-input" data-role="none" placeholder="Type address">
+                  <label for="animal-add-type" class="form-label">Location</label>
+                  <input id="animal-add-type" type="text" class="form-input" data-role="none" placeholder="Type address">
                </div>
                <div class="form-control">
-                  <label for="list-add-breed" class="form-label">Color</label>
-                  <input type="text" class="form-input" data-role="none" placeholder="Type color">
+                  <label for="animal-add-breed" class="form-label">Color</label>
+                  <input id="animal-add-breed" type="text" class="form-input" data-role="none" placeholder="Type color">
                </div>
 
                 <div class="form-control">
-                  <label for="list-add-color" class="form-label">Breed</label>
-                  <input id="list-add-color" type="text" class="form-input" data-role="none" placeholder="Type breed">
+                  <label for="animal-add-color" class="form-label">Breed</label>
+                  <input id="animal-add-color" type="text" class="form-input" data-role="none" placeholder="Type breed">
 
 
                </div>
 
 
                <div class="form-control">
-               <label class="form-label">Add Note:</label>
-               <textarea data-role="none" name="dog-note" class="add-dog-note"></textarea>
-               </div>
+               <label for="animal-add-description" class="form-label">Description</label>
+               <textarea id="animal-add-description" class="form-input" data-role="none" placeholder="Type animal description"></textarea>
+            </div>
 
 
                <div class="form-control">
-               <a href="#list-page" class="form-button">SAVE</a>
+               <a href="#" class="form-button" class="js-animal-add">SAVE</a>
                </div>
             </div>
 
@@ -353,14 +376,14 @@
       </header>
       <div data-role="main">
          <ul class="settings-list">
-            <li class="settings-item"><a href="#user-profile-edit-page">Profile Settings</a></li>
+            <li class="settings-item"><a href="#user-edit-page">Profile Settings</a></li>
             <li class="settings-item"><a href="#password-settings-page">Change Password</a></li>
             <li class="settings-item"><a href="#" class="js-logout">Logout</a></li>
          </ul>
       </div>
    </section>
 
-   <section data-role="page" id="user-profile-edit-page">
+   <section data-role="page" id="user-edit-page">
       <header data-role="header">
          <h1>Profile Settings</h1>
          <ul>
@@ -371,26 +394,11 @@
       </header>
       <div data-role="main" style="padding:1em">
 
-     <!--
-          <div class="display-flex user-profile-card space-around" >
-            <div class="profile-image flex-none">
-               <img src="img/user-profile.jpg" alt="" class="profile-image">
-            </div>
-          
-           <div class="user-detail flex-stretch">
-               <h3><a href="#imagepicker0" >Edit Picture</a></h3>
-
-               
-            </div>
-
-         </div>
-      -->
-
        <form id="user-edit-form" data-ajax="false" style="padding:1em"></form>
 
 
           <div class="form-control">
-              <a href="#user-profile-page" class="form-button">SAVE</a>
+              <a href="#" class="js-user-edit" class="form-button">SAVE</a>
             </div>
 
          
@@ -478,7 +486,7 @@
 <div class="modal" id="dog-menu" style="top: 0; z-index: 6;">
          <div class="modal-back" data-deactivate="#dog-menu"></div>
          <div class="modal-popup">
-            <div class="modal-head"><div><a href="#animal-profile-edit-page">Edit Dog Profile</a></div></div>
+            <div class="modal-head"><div><a href="#animal-edit-page">Edit Dog Profile</a></div></div>
             <div class="modal-foot"><a href="#list-page">Delete Dog Profile</a></div>
          </div>
       </div>
@@ -492,7 +500,7 @@
 
 
 
-   <section data-role="page" id="animal-profile-edit-page">
+   <section data-role="page" id="animal-edit-page">
 
 
       <header data-role="header">
@@ -509,73 +517,77 @@
         
          <form id="animal-edit-form" data-ajax="false" style="padding:1em"></form>
 
-         <a href="#list-page" class="form-button">SAVE</a>
+         <a href="#" class="js-animal-edit" class="form-button">SAVE</a>
       
 
 
    </dvi>
  </div>
 
-<!--
-   <div data-role="main" style="padding:1em">
-
-         <div class="display-flex user-profile-card space-around" >
-            <div class="profile-image flex-none">
-               <img src="img/dog/1.jpg" alt="" class="profile-image">
-            </div>
-          
-           <div class="user-detail flex-stretch">
-               <h3><a href="#imagepicker0" >Edit Dog Picture</a></h3>
-               
-            </div>
-
-         </div>
-
-         <form data-ajax="false">
-            <div class="form-control">
-               <label for="profile-username" class="form-label">Name</label>
-               <input type="text" class="form-input" data-role="none" placeholder="Type your username" value="Lily">
-            </div>
-            <div class="form-control">
-               <label for="profile-color" class="form-label">Color</label>
-               <input id="profile-color" type="text" class="form-input" data-role="none" placeholder="Type your color" value="Golden">
-            </div>
-            <div class="form-control">
-               <label for="profile-breed" class="form-label">Breed</label>
-               <input id="profile-breed" type="text" class="form-input" data-role="none" placeholder="Type your breed" value="Shiba Inu">
-            </div>
-             <div class="form-control">
-               <label for="profile-location" class="form-label">Location</label>
-               <input type="text" class="form-input" data-role="none" placeholder="Type your location" value="Southgate Park,Hayward, CA 94545">
-            </div>
-
-            <div class="form-control">
-               <p>Note:</p>
-              <p>Alert, Active, Attentive
-AKC Breed Popularity: Ranks 44 of 196
-Height: 14.5-16.5 inches (male), 13.5-15.5 inches (female)
-Weight: 23 pounds (male), 17 pounds (female)
-Life Expectancy: 13-16 years
-Group: Non-Sporting Group
-            </p>
-
-          <h5>Pinned on map:</h5>
-       <img src="img/pin_on_map.png" alt="">
-
-            </div>
-            
-         </form>
-
-
-      
-
-
-      </div>
- -->  
-     
-
 </section>
   
+
+
+   <section data-role="page" id="location-add-page">
+      <header data-role="header">
+         <h1>Choose Location</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#location-description-page">Next</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <input type="hidden" id="location-add-lat">
+         <input type="hidden" id="location-add-lng">
+         <div class="map"></div>
+      </div>
+   </section>
+
+   <section data-role="page" id="location-description-page">
+      <header data-role="header">
+         <h1>Describe Location</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-location-add">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <div class="overscroll">
+            <form id="location-add-form" data-ajax="false" style="padding:1em">
+               <div class="form-control">
+                  <label for="location-add-description" class="form-label">Description</label>
+                  <textarea id="location-add-description" class="form-input" data-role="none" placeholder="Type location description"></textarea>
+               </div>
+            </form>
+         </div>
+      </div>
+   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

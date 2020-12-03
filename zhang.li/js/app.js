@@ -46,7 +46,10 @@ $(()=>{
       e.preventDefault();
       checkSignupForm();
    })
-
+   .on("submit","#list-search-form",function(e){
+      e.preventDefault();
+      checkSearchForm();
+   })
 
 
 
@@ -85,6 +88,12 @@ $(()=>{
    .on("click",".js-animal-delete",function(e){
       checkAnimalDelete($(this).data("id"));
    })
+
+
+   .on("click",".filter",function(e){
+      checkListFilter($(this).data());
+   })
+
 
 
 

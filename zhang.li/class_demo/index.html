@@ -5,6 +5,14 @@
    
 
    <meta charset="UTF-8">
+
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+
+   <link rel="apple-touch-icon" href="./site_logo.png">
+   <link rel="icon" href="./site_logo.png">
+
+   
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Animal Tracker</title>
 
@@ -39,7 +47,7 @@
    <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column">
          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="icon" style="width:80vw;height:80vw;"><defs><style>.stroke-thin-center{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:4px;}</style></defs><title>thumbs-up</title><path d="M50,25V45H75.86l-2.93,2.93L70,50.86V74a1,1,0,0,1-1,1H20V55h5A20,20,0,0,0,45,35V25h5m0-10H40a5,5,0,0,0-5,5V35A10,10,0,0,1,25,45H10V85H69A11,11,0,0,0,80,74V55l2.93-2.93a10,10,0,0,0,0-14.14L80,35H60V25A10,10,0,0,0,50,15Z"></path><line class="stroke-thin-center" x1="30" y1="79" x2="30" y2="50"></line></svg>
+            <img src="./site_logo.png" class="icon" style="width:80vw;height:80vw;">
          </div>
          <form id="signin-form" data-ajax="false">
             <div class="form-control">
@@ -141,10 +149,13 @@
    </section>
 
    <section data-role="page" id="list-page">
-      <header data-role="header">
-         <h1>List Page</h1>
+     <header data-role="header">
          <ul>
-            <li class="flex-stretch"></li>
+            <li class="flex-stretch" style="padding:0.2em 0.5em">
+               <form class="hotdog" id="list-search-form" data-ajax="false">
+                  <input type="search" id="list-search-input" data-role="none">
+               </form>
+            </li>
             <li><a href="#animal-add-page">&plus;</a></li>
          </ul>
       </header>

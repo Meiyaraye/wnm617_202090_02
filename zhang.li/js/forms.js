@@ -23,15 +23,16 @@ const checkSignupForm = () => {
 }
 
 
-
 const checkUserEditForm = () => {
    let username = $("#user-edit-username").val();
    let name = $("#user-edit-name").val();
+   let gender = $("#user-edit-gender").val();
    let email = $("#user-edit-email").val();
+   let favorite dog = $("#user-edit-favorte-dog").val();
 
    query({
       type:'update_user',
-      params:[username,name,email,sessionStorage.userId]})
+      params:[username,name,gender,email,favorite dog,sessionStorage.userId]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -43,14 +44,14 @@ const checkUserEditForm = () => {
 
 const checkAnimalAddForm = () => {
    let name = $("#animal-add-name").val();
-   let type = $("#animal-add-type").val();
+   let type = $("#animal-add-color").val();
    let breed = $("#animal-add-breed").val();
    let description = $("#animal-add-description").val();
 
 
    query({
       type:'insert_animal',
-      params:[sessionStorage.userId,name,type,breed,description]})
+      params:[sessionStorage.userId,name,color,breed,description]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -68,13 +69,13 @@ const checkAnimalAddForm = () => {
 
 const checkAnimalEditForm = () => {
    let name = $("#animal-edit-name").val();
-   let type = $("#animal-edit-type").val();
+   let type = $("#animal-edit-color").val();
    let breed = $("#animal-edit-breed").val();
    let description = $("#animal-edit-description").val();
 
    query({
       type:'update_animal',
-      params:[name,type,breed,description,sessionStorage.animalId]})
+      params:[name,color,breed,description,sessionStorage.animalId]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -117,4 +118,40 @@ const checkLocationAddForm = () => {
       $("#location-add-form")[0].reset();
       window.history.go(-2);
    })
+}
+
+
+
+
+
+
+
+
+
+
+
+const checkSearchForm = async () => {
+   let s = $("#list-search-input").val();
+   console.log(s)
+
+   let r = await query({type:"search_animals",params:[s]});
+
+   drawAnimalList(r.result,'No results found')
+
+   console.log(r)
+}
+
+const checkListFilter = async (d) => {
+   let r = await d.value=='all' ?
+      query({
+         type:'animals_by_user_id',
+         params:[sessionStorage.userId]
+      }) :
+      query({
+         type:'animal_filter',
+         params:[d.field,d.value,sessionStorage.userId]
+      });
+
+   console.log(r)
+   drawAnimalList(r.result,'No results found');
 }

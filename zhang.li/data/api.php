@@ -25,7 +25,7 @@ function fetchAll($r) {
 
 
 // connection, prepared statement, parameters
-function makeQuery($c,$ps,$p) {
+function makeQuery($c,$ps,$p,$makeResults=true) {
    try {
       if(count($p)) {
          $stmt = $c->prepare($ps);
@@ -34,7 +34,7 @@ function makeQuery($c,$ps,$p) {
          $stmt = $c->query($ps);
       }
 
-      $r = fetchAll($stmt);
+      $r = $makeResults ? fetchAll($stmt) : [];
 
       return [
          "result"=>$r
@@ -116,6 +116,36 @@ function makeStatement($data) {
             ",$p);
 
 
+    
+
+
+      case "search_animals":
+         $p = ["%$p[0]%",$p[1]];
+         return makeQuery($c,"SELECT * FROM
+            `track_animals`
+            WHERE
+               `name` LIKE ?
+               AND user_id = ?
+            ",$p);
+
+      case "animal_search_recent":
+         $p = ["%$p[0]%",$p[1]];
+         return makeQuery($c,"SELECT * FROM
+            `track_animals` a
+            LEFT JOIN (
+               SELECT * FROM `track_locations`
+               ORDER BY `date_create` DESC
+            ) l
+            ON a.id = l.animal_id
+            WHERE 
+               a.name LIKE ?
+               AND a.user_id = ?
+            GROUP BY l.animal_id
+            ",$p);
+
+
+
+
 
   // CRUD
 
@@ -136,7 +166,7 @@ function makeStatement($data) {
       case "insert_animal":
          $r = makeQuery($c,"INSERT INTO
             `track_animals`
-            (`user_id`,`name`,`type`,`breed`,`description`,`img`,`date_create`)
+            (`user_id`,`name`,`color`,`breed`,`description`,`img`,`date_create`)
             VALUES
             (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=ANIMAL', NOW())
             ",$p,false);
@@ -161,8 +191,10 @@ function makeStatement($data) {
             SET
                `username` = ?,
                `name` = ?,
-               `email` = ?
-            WHERE `id` = ?
+               `gender`=?,
+               `email` = ?,
+               `favorite dog'=?
+               WHERE `id` = ?
             ",$p,false);
          return ["result"=>"success"];
 
@@ -171,7 +203,7 @@ function makeStatement($data) {
             `track_animals`
             SET
                `name` = ?,
-               `type` = ?,
+               `color` = ?,
                `breed` = ?,
                `description` = ?
             WHERE `id` = ?

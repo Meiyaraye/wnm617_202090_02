@@ -46,7 +46,10 @@ $(()=>{
       e.preventDefault();
       checkSignupForm();
    })
-
+   .on("submit","#list-search-form",function(e){
+      e.preventDefault();
+      checkSearchForm();
+   })
 
 
 
