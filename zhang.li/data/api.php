@@ -48,22 +48,27 @@ function makeQuery($c,$ps,$p,$makeResults=true) {
 }
 
 
-/*
-echo json_encode(
-   makeQuery(
-      makeConn(),
 
-    //"SELECT * FROM track_animals WHERE breed =?",['dog']),
-  
-     
-     "SELECT * FROM track_animals WHERE color = ? AND breed = ?",
-      ['Golden','Shiba Inu'] 
-   ),
-    
-   JSON_NUMERIC_CHECK
-);
 
-*/
+
+
+
+function makeUpload($file,$folder) {
+   $filename = microtime(true) . "_" . $_FILES[$file]['name'];
+
+   if(@move_uploaded_file(
+      $_FILES[$file]['tmp_name'],
+      $folder.$filename
+   )) return ['result'=>$filename];
+   else return [
+      "error"=>"File Upload Failed",
+      "_FILES"=>$_FILES,
+      "filename"=>$filename
+   ];
+}
+
+
+
 
 
 
@@ -144,6 +149,16 @@ function makeStatement($data) {
             ",$p);
 
 
+      case "animal_filter":
+         return makeQuery($c,"SELECT * FROM
+            `track_animals`
+            WHERE
+               `$p[0]` = ?
+               AND user_id = ?
+            ",[$p[1],$p[2]]);
+
+
+
 
 
 
@@ -166,9 +181,9 @@ function makeStatement($data) {
       case "insert_animal":
          $r = makeQuery($c,"INSERT INTO
             `track_animals`
-            (`user_id`,`name`,`color`,`breed`,`description`,`img`,`date_create`)
+            (`user_id`,`name`,`location`,`color`,`breed`,`description`,`img`,`date_create`)
             VALUES
-            (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=ANIMAL', NOW())
+            (?, ?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=ANIMAL', NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
 
@@ -193,10 +208,25 @@ function makeStatement($data) {
                `name` = ?,
                `gender`=?,
                `email` = ?,
-               `favorite dog'=?
+               `favorite_dog`=?
                WHERE `id` = ?
             ",$p,false);
          return ["result"=>"success"];
+
+
+
+
+     case "update_user_image":
+         $r = makeQuery($c,"UPDATE
+            `track_users`
+            SET
+               `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
+
+
+
 
       case "update_animal":
          $r = makeQuery($c,"UPDATE
@@ -227,6 +257,16 @@ function makeStatement($data) {
    }
 }
 
+
+
+
+
+
+
+if(!empty($_FILES)) {
+   $r = makeUpload("image","../uploads/");
+   die(json_encode($r));
+}
 
 
 

@@ -24,15 +24,18 @@ const checkSignupForm = () => {
 
 
 const checkUserEditForm = () => {
+
+   let userimg = $("#user-edit-img").val();
    let username = $("#user-edit-username").val();
    let name = $("#user-edit-name").val();
+   let location = $("#user-edit-location").val();
    let gender = $("#user-edit-gender").val();
    let email = $("#user-edit-email").val();
-   let favorite dog = $("#user-edit-favorte-dog").val();
+   let favoritedog = $("#user-edit-favorite-dog").val();
 
    query({
       type:'update_user',
-      params:[username,name,gender,email,favorite dog,sessionStorage.userId]})
+      params:[userimg,username,name,location,gender,email,favoritedog,sessionStorage.userId]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -44,14 +47,15 @@ const checkUserEditForm = () => {
 
 const checkAnimalAddForm = () => {
    let name = $("#animal-add-name").val();
-   let type = $("#animal-add-color").val();
+   let location = $("#animal-add-location").val();
+   let color = $("#animal-add-color").val();
    let breed = $("#animal-add-breed").val();
    let description = $("#animal-add-description").val();
 
 
    query({
       type:'insert_animal',
-      params:[sessionStorage.userId,name,color,breed,description]})
+      params:[sessionStorage.userId,name,location,color,breed,description]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -69,7 +73,7 @@ const checkAnimalAddForm = () => {
 
 const checkAnimalEditForm = () => {
    let name = $("#animal-edit-name").val();
-   let type = $("#animal-edit-color").val();
+   let color = $("#animal-edit-color").val();
    let breed = $("#animal-edit-breed").val();
    let description = $("#animal-edit-description").val();
 
@@ -130,24 +134,25 @@ const checkLocationAddForm = () => {
 
 
 
+
 const checkSearchForm = async () => {
    let s = $("#list-search-input").val();
    console.log(s)
 
-   let r = await query({type:"search_animals",params:[s]});
+   let r = await query({type:"search_animals",params:[s,sessionStorage.userId]});
 
-   drawAnimalList(r.result,'No results found')
+   drawAnimalList(r.result,'No results found');
 
    console.log(r)
 }
 
 const checkListFilter = async (d) => {
-   let r = await d.value=='all' ?
-      query({
+   let r = d.value=='all' ?
+      await query({
          type:'animals_by_user_id',
          params:[sessionStorage.userId]
       }) :
-      query({
+      await query({
          type:'animal_filter',
          params:[d.field,d.value,sessionStorage.userId]
       });
@@ -155,3 +160,30 @@ const checkListFilter = async (d) => {
    console.log(r)
    drawAnimalList(r.result,'No results found');
 }
+
+
+const checkUpload = file => {
+   let fd = new FormData();
+   fd.append("image",file);
+
+   return fetch('data/api.php',{
+      method:'POST',
+      body:fd
+   }).then(d=>d.json())
+}
+
+const checkUserUpload = () => {
+   let upload = $("#user-upload-image").val()
+   if(upload=="") return;
+
+   query({
+      type:'update_user_image',
+      params:[upload,sessionStorage.userId]
+   }).then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
+      window.history.back();
+   })
+}
+

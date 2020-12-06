@@ -1,6 +1,7 @@
 
 const drawAnimalList = (a,empty_phrase='Please add an animal.') => {
-   $("#list-page .animallist").html(a.length?makeAnimalList(a):);
+   $("#list-page .animallist")
+      .html(a.length?makeAnimalList(a):empty_phrase);
 }
 
 
@@ -53,6 +54,11 @@ const makeUserProfile = templater(o=>`
 `);
 
 
+
+
+
+
+
 const makeAnimalProfile = templater(o=>`
 
         
@@ -71,9 +77,13 @@ const makeAnimalProfile = templater(o=>`
               <p > ${o.description}</p>    
 
             </div>
-   <div>
+ 
+    <div>
       <a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a>
    </div>
+
+
+
 `);
 
 const makeAnimalPopup = o=>`
@@ -105,6 +115,21 @@ const FormControl = ({namespace,name,displayname,type,placeholder,textarea,value
 
 
 const makeAnimalEditForm = o => `
+
+<form id="user-edit-form" data-ajax="false" style="padding:1em">
+        <div class="form-control display-flex flex-align-center  flex-column">
+                  <div class="form-upload-photo">
+                     <img src="${o.img}">
+
+                  </div>
+                  <div >
+                     <a href="#user-upload-page" class="edit-photo-btn">Edit Photo</a>
+                     
+                  </div>
+       </div>
+</form>
+
+
 
 ${FormControl({
    namespace:"animal-edit",
@@ -148,6 +173,17 @@ ${FormControl({
 
 const makeUserEditForm = o => `
 <form id="user-edit-form" data-ajax="false" style="padding:1em">
+        <div class="form-control display-flex flex-align-center  flex-column">
+                  <div class="form-upload-photo">
+                     <img src="${o.img}">
+
+                  </div>
+                  <div >
+                     <a href="#user-upload-page" class="edit-photo-btn">Edit Photo</a>
+                     
+                  </div>
+       </div>
+</form>
 ${FormControl({
    namespace:"user-edit",
    name:"username",
@@ -156,6 +192,8 @@ ${FormControl({
    placeholder:"Type Your Username",
    value:o.username
 })}
+
+
 ${FormControl({
    namespace:"user-edit",
    name:"name",
@@ -164,6 +202,19 @@ ${FormControl({
    placeholder:"Type Your Full Name",
    value:o.name
 })}
+
+
+${FormControl({
+   namespace:"user-edit",
+   name:"location",
+   displayname:"Location",
+   type:"text",
+   placeholder:"Type Your Location",
+   value:o.location
+})}
+
+
+
 ${FormControl({
    namespace:"user-edit",
    name:"gender",
@@ -182,7 +233,7 @@ ${FormControl({
 })}
 ${FormControl({
    namespace:"user-edit",
-   name:"favorite dog",
+   name:"favorite-dog",
    displayname:"Favorite Dog",
    type:"text",
    placeholder:"Type Your favorite Dog",
@@ -190,6 +241,7 @@ ${FormControl({
 })}
 
 `;
+
 
 
 
@@ -206,3 +258,26 @@ const makeFilterList = (animals) => {
    ${filterList(animals,'breed')} 
    `;
 }
+
+
+
+
+const makeUploaderImage = ({namespace,folder,name}) => {
+   $(`#${namespace}-image`).val(folder+name);
+   $(`#${namespace}-page .image-uploader`)
+      .css({'background-image':`url('${folder+name}')`})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

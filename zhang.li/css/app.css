@@ -17,8 +17,8 @@ left{
 
 
 :root {
-   --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-   --font-mono: "Liberation Mono", "Courier New", monospace;
+   --font-heading: 'Open Sans', Arial, sans-serif;
+   --font-parapragh: 'Barlow',Cambria, Georgia, serif;
 
 
 
@@ -307,16 +307,97 @@ div#list-add {
 
 
 
-
-
-
-
-
-
 img.flex-none {
         width: 1.5em;
         height:1.5em;
 }
+
+
+
+.hotdog {
+   width:100%;
+   background-color:var(--color-neutral-light);
+
+   padding:0.5em 1em;
+   border-radius:2em;
+   line-height:1;
+   display:inline-flex;
+}
+.hotdog input {
+   background-color:transparent;
+   border-width:0;
+   font:inherit;
+   color:inherit;
+   border-radius:0;
+   padding:0;
+   margin:0;
+   width:100%;
+   flex:1;
+   outline:0;
+}
+.ui-header .hotdog {
+   height:calc(var(--header-height) - 0.4em);
+   vertical-align: middle;
+}
+
+
+
+
+
+
+.list-search {
+   padding:0.2em 0.5em;
+   display: flex;
+   align-items: center;
+}
+
+
+
+
+.filter-list {
+    display: flex;
+    overflow: auto;
+}
+.filter {
+    padding: 0px 0.5em;
+    font-weight:bold;
+}
+
+
+
+
+
+/*Profile editing page*/
+.form-upload-photo{
+    width: 150px;
+}
+
+.form-upload-photo img{
+   max-width: 100%;
+   border-radius: 20%;
+
+}
+
+a.edit-photo-btn {
+    padding: 0.5em 1em;
+    display: block;
+    background-color: var(--color-main-medium);
+    border-radius: 5px;
+    font-size: 0.8em;
+    margin: 0.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* MODALS */
@@ -872,9 +953,24 @@ div#set_icon {
 }
 
 
+/*Upload Image0*/
 
+.image-uploader.full {
+   position:absolute;
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
 
-
+   background-size:contain;
+   background-repeat:no-repeat;
+}
+.ui-mobile label.image-uploader {
+   margin:0;
+}
+.image-uploader input {
+   display:none;
+}
 
 
 
