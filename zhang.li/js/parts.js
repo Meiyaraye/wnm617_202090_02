@@ -254,7 +254,7 @@ const filterList = (animals,type) => {
 const makeFilterList = (animals) => {
    return `
    <div class="filter" data-field="type" data-value="all">All</div> | 
-   ${filterList(animals,'color')} | 
+
    ${filterList(animals,'breed')} 
    `;
 }
