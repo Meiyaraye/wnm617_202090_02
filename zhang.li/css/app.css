@@ -668,6 +668,7 @@ flex-direction:column;
     height: 80px;
     object-fit: cover;
     vertical-align:text-bottom;
+    border-radius: 50%;
 }
 .animallist-item {
     display: flex;

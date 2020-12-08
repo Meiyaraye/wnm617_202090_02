@@ -113,7 +113,7 @@
 
 <div data-role="main">   
      <div class="map"></div>
-
+<!--
   <div class="search-control">
          <div class="display-flex search-bar ">
             <img src="img/icon/search.svg" class="flex-none" alt="">
@@ -121,7 +121,7 @@
        
          </div>   
    </div>
-
+-->
 
 
          <div class="floater bottom right">
@@ -197,10 +197,10 @@
       </header>
 
 
+
   <header data-role="header">
          <div class="filter-list"></div>
    </header>
-
 
 
 
@@ -210,7 +210,7 @@
 <div class="display-flex flex-align-center" style="flex:none">
  <!--  <div class="flex-stretch search-control">
          <div class="display-flex search-bar ">
-      <img src="img/icon/search.svg" class="flex-none" alt="">
+      
             <input type="text" class="flex-stretch" data-role="none" placeholder="Search for dog"> </div>   
      
 </div>
@@ -218,7 +218,8 @@
 
             <li class="flex-stretch list-search">
                <form class="hotdog" id="list-search-form" data-ajax="false">
-                  <input type="search" id="list-search-input" data-role="none" placeholder="Search">
+                  <img src="img/icon/search.svg" class="flex-none" alt="">
+                  <input type="search" id="list-search-input" data-role="none" placeholder="Search dog">
                </form>
             </li>
  
@@ -226,13 +227,13 @@
 
 
 
-
+<!--
           
           <div class="overscroll">
             <div class="animallist"></div>
           </div>
          
-
+-->
       
    <!-- 
             <div class="filter-bar">
@@ -427,9 +428,9 @@
       <header data-role="header">
          <h1>Choose Photo</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back">&#10094;</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-user-upload">Save</a></li>
+           <!-- <li><a href="#" class="js-user-upload">Save</a></li>  -->
          </ul>
 
       </header>
@@ -440,6 +441,12 @@
                <input type="file" data-role="none" id="user-upload-input">
             </label>
          </form>
+
+
+  <div class="form-control">
+               <a href="#" class="form-button js-user-upload">SAVE</a>
+    </div>
+
       </div>
    </section>
 
@@ -593,9 +600,9 @@
       <header data-role="header">
          <h1>Choose Location</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back">&#10094;</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#location-description-page">Next</a></li>
+            <li><a href="#location-description-page">&#10095;</a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -609,9 +616,9 @@
       <header data-role="header">
          <h1>Describe Location</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back">&#10094;</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-location-add">Save</a></li>
+          <!--  <li><a href="#" class="js-location-add">Save</a></li>    -->
          </ul>
       </header>
       <div data-role="main">
@@ -622,6 +629,13 @@
                   <textarea id="location-add-description" class="form-input" data-role="none" placeholder="Type location description"></textarea>
                </div>
             </form>
+
+      <div class="form-control">
+               <a href="#" class="form-button js-location-add">SAVE</a>
+       </div>
+
+
+
          </div>
       </div>
    </section>
