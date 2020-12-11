@@ -17,10 +17,7 @@ const RecentPage = async() => {
 
    let map_el = await makeMap("#recent-page .map");
 
-   //console.log(map_el.data('map'))
-
-   makeMarkers(map_el,valid_animals);
-   // makeMarkers(map_el,[]);
+    makeMarkers(map_el,valid_animals);
 
    map_el.data("markers").forEach((o,i)=>{
       o.addListener("click",function(){
@@ -83,6 +80,7 @@ const UserProfilePage = async() => {
 
    console.log(d)
 
+   $("#user-fav-img").val(d.result[0].img);
    $("#user-profile-page .profile")
       .html(makeUserProfile(d.result));
 }
@@ -92,6 +90,9 @@ const UserEditPage = async() => {
       params:[sessionStorage.userId]
    }).then(d=>{
       console.log(d)
+
+      $("#user-upload-img").val(d.result[0].img);
+
 
       $("#user-edit-form")
          .html(makeUserEditForm(d.result[0]));
@@ -107,16 +108,21 @@ const UserUploadPage = async() => {
    }).then(d=>{
       console.log(d)
 
-      makeUploaderImage({
-         namespace:'user-upload',
-         folder:'',
-         name:d.result[0].img
-      })
+      makeUploaderImage($("#user-upload-input"),d.result[0].img)
    });
 }
 
 
+const UserUploadFavImgPage = async() => {
+   query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   }).then(d=>{
+      console.log(d)
 
+      makeUploaderImage($("#user-fav-upload"),d.result[0].img)
+   });
+}
 
 
 

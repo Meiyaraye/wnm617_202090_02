@@ -172,9 +172,9 @@ function makeStatement($data) {
 
          $r = makeQuery($c,"INSERT INTO
             `track_users`
-            (`username`,`email`,`password`,`img`,`date_create`)
+            (`username`,`email`,`password`,`img`,`fav_img`,`date_create`)
             VALUES
-            (?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
+            (?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER','https://via.placeholder.com/400/?text=USER', NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
 
@@ -204,8 +204,10 @@ function makeStatement($data) {
          $r = makeQuery($c,"UPDATE
             `track_users`
             SET
+               `img` = ?,
                `username` = ?,
                `name` = ?,
+               `location`=?,
                `gender`=?,
                `email` = ?,
                `favorite_dog`=?
@@ -225,6 +227,16 @@ function makeStatement($data) {
             ",$p,false);
          return ["result"=>"success"];
 
+     
+      case "update_user_fav_img":
+         $r = makeQuery($c,"UPDATE
+            `track_users`
+            SET
+               `upload_img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
+
 
 
 
@@ -233,9 +245,11 @@ function makeStatement($data) {
             `track_animals`
             SET
                `name` = ?,
+               `location` = ?,
                `color` = ?,
                `breed` = ?,
-               `description` = ?
+               `description` = ?,
+               `img` = ?
             WHERE `id` = ?
             ",$p,false);
          return ["result"=>"success"];

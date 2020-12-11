@@ -41,15 +41,29 @@ const makeUserProfile = templater(o=>`
          <div class="user-profile-detail">
 
          <h4 id="my-information">My Information:</h4>
+
+            <p><span>Name:</span> ${o.name}</p>
+            <p><span>Location:</span> ${o.location}</p>
             <p><span>Gender:</span> ${o.gender}</p>
             <p><span>Email:</span> ${o.email}</p>
             <p><span>Favorite dog:</span> ${o.favorite_dog}</p>
 
+       <br>
+        <h4 id="my-information"> Add the Photo you like:</h4>
 
-        <h4> Recently Dog Added</h4>
-        
-
+          <div class="grid gap col-sm-6">
           
+              <input type="hidden" id="user-fav-img" value="${o.upload_img}">
+               <label class="image-uploader imagepicker imagepicker-add thumbnail"  style="background-image:url('${o.upload_img}')">
+                  <form>
+                  <input type='file' id="imagepicker2" multiple   data-role="none" id="user-fav-upload">
+                  </form>
+                </label>
+            
+        
+         </div>
+
+         
          </div>
 `);
 
@@ -79,7 +93,7 @@ const makeAnimalProfile = templater(o=>`
             </div>
  
     <div>
-      <a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a>
+      <a href="#" class="form-button js-animal-delete" data-id="${o.id}">Delete</a>
    </div>
 
 
@@ -116,19 +130,12 @@ const FormControl = ({namespace,name,displayname,type,placeholder,textarea,value
 
 const makeAnimalEditForm = o => `
 
-<form id="user-edit-form" data-ajax="false" style="padding:1em">
-        <div class="form-control display-flex flex-align-center  flex-column">
-                  <div class="form-upload-photo">
-                     <img src="${o.img}">
-
-                  </div>
-                  <div >
-                     <a href="#user-upload-page" class="edit-photo-btn">Edit Photo</a>
-                     
-                  </div>
-       </div>
-</form>
-
+<div>
+   <input type="hidden" id="animal-edit-image" value="${o.img}">
+   <label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
+      <input type="file" data-role="none" id="animal-edit-upload">
+   </label>
+</div>
 
 
 ${FormControl({
@@ -172,18 +179,14 @@ ${FormControl({
 
 
 const makeUserEditForm = o => `
-<form id="user-edit-form" data-ajax="false" style="padding:1em">
-        <div class="form-control display-flex flex-align-center  flex-column">
-                  <div class="form-upload-photo">
-                     <img src="${o.img}">
+<div>
+   <input type="hidden" id="user-edit-image" value="${o.img}">
+   <label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
+      <input type="file" data-role="none" id="user-edit-upload">
+   </label>
+</div>
 
-                  </div>
-                  <div >
-                     <a href="#user-upload-page" class="edit-photo-btn">Edit Photo</a>
-                     
-                  </div>
-       </div>
-</form>
+
 ${FormControl({
    namespace:"user-edit",
    name:"username",
@@ -262,13 +265,10 @@ const makeFilterList = (animals) => {
 
 
 
-const makeUploaderImage = ({namespace,folder,name}) => {
-   $(`#${namespace}-image`).val(folder+name);
-   $(`#${namespace}-page .image-uploader`)
-      .css({'background-image':`url('${folder+name}')`})
+const makeUploaderImage = (el,name,folder='') => {
+   $(el).parent().css({'background-image':`url('${folder+name}')`}).addClass("picked")
+      .prev().val(folder+name)
 }
-
-
 
 
 

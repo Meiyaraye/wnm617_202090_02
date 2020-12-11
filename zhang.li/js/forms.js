@@ -25,7 +25,7 @@ const checkSignupForm = () => {
 
 const checkUserEditForm = () => {
 
-   let userimg = $("#user-edit-img").val();
+   let img = $("#user-edit-image").val();
    let username = $("#user-edit-username").val();
    let name = $("#user-edit-name").val();
    let location = $("#user-edit-location").val();
@@ -35,7 +35,7 @@ const checkUserEditForm = () => {
 
    query({
       type:'update_user',
-      params:[userimg,username,name,location,gender,email,favoritedog,sessionStorage.userId]})
+      params:[img,username,name,location,gender,email,favoritedog,sessionStorage.userId]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -73,13 +73,16 @@ const checkAnimalAddForm = () => {
 
 const checkAnimalEditForm = () => {
    let name = $("#animal-edit-name").val();
+   let location = $("#animal-add-location").val();
    let color = $("#animal-edit-color").val();
    let breed = $("#animal-edit-breed").val();
    let description = $("#animal-edit-description").val();
+   let image = $("#animal-edit-image").val();
 
+   console.log([name,location,color,breed,description,image,sessionStorage.animalId]);
    query({
       type:'update_animal',
-      params:[name,color,breed,description,sessionStorage.animalId]})
+      params:[name,location,color,breed,description,image,sessionStorage.animalId]})
    .then(d=>{
       if(d.error) {
          throw d.error;

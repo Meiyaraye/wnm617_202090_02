@@ -168,7 +168,7 @@
 
                <div class="modal-body settings-list">
                   <div class="settings-item">
-                  <a href="#recent-page" data-deactivate="#pin-on-map">Pin on Map</a></div>
+                  <a href="#location-add-page" data-deactivate="#pin-on-map">Pin on Map</a></div>
 
                <div class="settings-item"><a href="#recent-page" data-deactivate="#pin-on-map">Cancel</a></div>
              
@@ -208,38 +208,14 @@
 
 
 <div class="display-flex flex-align-center" style="flex:none">
- <!--  <div class="flex-stretch search-control">
-         <div class="display-flex search-bar ">
-      
-            <input type="text" class="flex-stretch" data-role="none" placeholder="Search for dog"> </div>   
-     
-</div>
-  --> 
+
 
             <li class="flex-stretch list-search">
                <form class="hotdog" id="list-search-form" data-ajax="false">
                   <img src="img/icon/search.svg" class="flex-none" alt="">
-                  <input type="search" id="list-search-input" data-role="none" placeholder="Search dog">
+                  <input type="search" id="list-search-input" data-role="none" placeholder=" Search dog">
                </form>
             </li>
- 
-         <!--  <div class="filter-list"></div>  -->
-
-
-
-<!--
-          
-          <div class="overscroll">
-            <div class="animallist"></div>
-          </div>
-         
--->
-      
-   <!-- 
-            <div class="filter-bar">
-                <h5 class="" data-activate="#sort-menu">Sort By</h5>
-            </div>
-   -->
 
 
 </div>
@@ -299,13 +275,15 @@
       </header>
 
    <div class="overscroll" >
-    <label class="imagepicker imagepicker-replace thumbnail"  >
+<!-- 
+  <label class="imagepicker imagepicker-replace thumbnail"  >
       <form>
   
          <input type='file' id="imagepicker1" data-role="none">
         
       </form>
-    </label>
+    </label> 
+-->
  <div id="list-add">
 
       <form id="animal-add-form" data-ajax="false" class="listadd">
@@ -358,15 +336,8 @@
       <div data-role="main">
          <div class="profile"></div>
 
-         <div class="grid gap">
-            <div class="col-sm-6"> 
-               <img src="img/dog1.png">
-            </div>
-            <div class="col-sm-6"> 
-               <img src="img/dog1.png">
-            </div>
-            
-         </div>
+        
+
 
       </div>
 
@@ -430,7 +401,7 @@
          <ul>
             <li><a href="#" data-rel="back">&#10094;</a></li>
             <li class="flex-stretch"></li>
-           <!-- <li><a href="#" class="js-user-upload">Save</a></li>  -->
+           <li><a href="#" class="js-user-upload">&#10095;</a></li>  
          </ul>
 
       </header>
@@ -443,31 +414,11 @@
          </form>
 
 
-  <div class="form-control">
-               <a href="#" class="form-button js-user-upload">SAVE</a>
-    </div>
+  
 
       </div>
+
    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -551,13 +502,38 @@
 
 
 
+
 <div class="modal" id="dog-menu" style="top: 0; z-index: 6;">
          <div class="modal-back" data-deactivate="#dog-menu"></div>
          <div class="modal-popup">
-            <div class="modal-head"><div><a href="#animal-edit-page">Edit Dog Profile</a></div></div>
-            <div class="modal-foot"><a href="#" class="js-animal-delete" >Delete Dog Profile</a></div>
+            <div class="modal-head">
+               <div>
+                  <a href="#animal-edit-page" data-deactivate="#dog-menu">Edit Dog Profile</a>
+               </div>
+            </div>
+            <div class="modal-foot">
+               <a href="#"  data-deactivate="#dog-menu" >Cancel</a>
+            </div>
+         </div>
+</div>
+
+<!--
+   <div class="modal" id="delete-dog" style="top: 0; z-index: 6; left: 0;">
+         <div class="modal-back" data-deactivate="#delete-dog"></div>
+         <div class="modal-popup">
+            
+            <div class="modal-question"><div>Are you sure?</div></div>
+            <div class="display-flex space-around" style="background: var(--color-main-medium);">
+               <div class="modal-select flex-none" data-deactivate="#delete-dog"><a href="#">No</a></div>
+               <div class="modal-select flex-none yes" data-deactivate="#delete-dog"><a href="#" class="js-animal-delete" >Yes</a></div>
+            </div>
          </div>
       </div>
+
+-->
+
+
+
 
    </section>
 
@@ -618,24 +594,24 @@
          <ul>
             <li><a href="#" data-rel="back">&#10094;</a></li>
             <li class="flex-stretch"></li>
-          <!--  <li><a href="#" class="js-location-add">Save</a></li>    -->
+          <li><a href="#" class="js-location-add">&#10095;</a></li>    
          </ul>
       </header>
-      <div data-role="main">
+     <div data-role="main">
          <div class="overscroll">
             <form id="location-add-form" data-ajax="false" style="padding:1em">
+
+               <div>
+                  <input type="hidden" id="location-add-image">
+                  <label class="image-uploader thumbnail">
+                     <input type="file" data-role="none" id="location-add-upload">
+                  </label>
+               </div>
                <div class="form-control">
                   <label for="location-add-description" class="form-label">Description</label>
                   <textarea id="location-add-description" class="form-input" data-role="none" placeholder="Type location description"></textarea>
                </div>
             </form>
-
-      <div class="form-control">
-               <a href="#" class="form-button js-location-add">SAVE</a>
-       </div>
-
-
-
          </div>
       </div>
    </section>

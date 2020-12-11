@@ -24,6 +24,7 @@ $(()=>{
          case 'user-profile-page': UserProfilePage(); break;
          case 'user-edit-page': UserEditPage(); break;
          case 'user-upload-page': UserUploadPage(); break;
+         case "update_user_fav_img": UserUploadFavImgPage(); break;
 
          case 'animal-profile-page': AnimalProfilePage(); break;
          case 'animal-edit-page': AnimalEditPage(); break;
@@ -106,11 +107,7 @@ $(()=>{
       checkUpload(this.files[0])
       .then(d=>{
          console.log(d)
-         makeUploaderImage({
-            namespace:'user-upload',
-            folder:'uploads/',
-            name:d.result
-         })
+         makeUploaderImage(this,d.result,'uploads/')
       })
    })
 
@@ -168,23 +165,6 @@ function readFiles(files,callback,index=0) {
   }
 }
 
-
-
-
-
-
-// Create a selector for an input and then do whatever you want using the callback function.
-$("body")
-  .on("change",".imagepicker-replace input",function() {
-  // store the current "this" into a variable
-  var imagepicker = this;
-  readFiles(this.files,function(e) {
-    // "this" will be different in the callback function
-    $(imagepicker).parent()
-      .addClass("picked")
-      .css({"background-image":"url("+e.target.result+")"});
-  });
-})
 
 
 
