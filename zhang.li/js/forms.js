@@ -22,7 +22,7 @@ const checkSignupForm = () => {
    }
 }
 
-
+//
 const checkUserEditForm = () => {
 
    let img = $("#user-edit-image").val();

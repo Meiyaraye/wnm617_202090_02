@@ -16,7 +16,7 @@ $(()=>{
    .on("pagecontainerbeforeshow",function(e,ui){
       console.log(ui.toPage[0].id)
 
-      // Routing
+      // Routing    case "update_user_fav_img": UserUploadFavImgPage(); break;
       switch(ui.toPage[0].id) {
          case 'recent-page': RecentPage(); break;
          case 'list-page': ListPage(); break;
@@ -24,7 +24,7 @@ $(()=>{
          case 'user-profile-page': UserProfilePage(); break;
          case 'user-edit-page': UserEditPage(); break;
          case 'user-upload-page': UserUploadPage(); break;
-         case "update_user_fav_img": UserUploadFavImgPage(); break;
+        
 
          case 'animal-profile-page': AnimalProfilePage(); break;
          case 'animal-edit-page': AnimalEditPage(); break;

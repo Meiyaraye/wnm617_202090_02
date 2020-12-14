@@ -228,14 +228,14 @@ function makeStatement($data) {
          return ["result"=>"success"];
 
      
-      case "update_user_fav_img":
-         $r = makeQuery($c,"UPDATE
-            `track_users`
-            SET
-               `upload_img` = ?
-            WHERE `id` = ?
-            ",$p,false);
-         return ["result"=>"success"];
+    //  case "update_user_fav_img":
+    //     $r = makeQuery($c,"UPDATE
+      //      `track_users`
+        //    SET
+       //        `upload_img` = ?
+       //    WHERE `id` = ?
+       //     ",$p,false);
+       //  return ["result"=>"success"];
 
 
 

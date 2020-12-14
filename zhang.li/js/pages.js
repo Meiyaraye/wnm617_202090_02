@@ -80,7 +80,7 @@ const UserProfilePage = async() => {
 
    console.log(d)
 
-   $("#user-fav-img").val(d.result[0].img);
+   //$("#user-fav-img").val(d.result[0].img);
    $("#user-profile-page .profile")
       .html(makeUserProfile(d.result));
 }
@@ -113,16 +113,16 @@ const UserUploadPage = async() => {
 }
 
 
-const UserUploadFavImgPage = async() => {
-   query({
-      type:'user_by_id',
-      params:[sessionStorage.userId]
-   }).then(d=>{
-      console.log(d)
-
-      makeUploaderImage($("#user-fav-upload"),d.result[0].img)
-   });
-}
+//const UserUploadFavImgPage = async() => {
+ //  query({
+ //     type:'user_by_id',
+ //     params:[sessionStorage.userId]
+ //  }).then(d=>{
+ //     console.log(d)
+//
+//     makeUploaderImage($("#user-fav-upload"),d.result[0].img)
+//   });
+//}
 
 
 
