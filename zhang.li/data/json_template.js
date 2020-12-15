@@ -86,7 +86,7 @@
     description: '{{lorem(3, "sentences")}}',
     
     photo: 'https://via.placeholder.com/400/',
-    icon: 'https://via.placeholder.com/100/?text=ICON',
+    icon: 'http://lzdesignworks.com/aau/wnm617/zhang.li/img/icon/icon_marker.svg',
     
     date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
   }

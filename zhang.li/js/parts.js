@@ -33,7 +33,7 @@ const makeUserProfile = templater(o=>`
 
            <div class="flex-stretch" id="set_icon">
            <a href="#settings-page" >
-               <img src="img/setting.svg" alt="add" class="icon" style="width:13vw;height:13vw;">
+               <img src="img/setting.svg" alt="add" class="icon" >
             </a>
           </div>
          </div>
@@ -49,19 +49,18 @@ const makeUserProfile = templater(o=>`
             <p><span>Favorite dog:</span> ${o.favorite_dog}</p>
 
        <br>
-        <h4 id="my-information"> Add the Photo you like:</h4>
 
-          <div class="grid gap col-sm-6">
-          
-              <input type="hidden" id="user-fav-img" value="${o.upload_img}">
-               <label class="image-uploader imagepicker imagepicker-add thumbnail"  style="background-image:url('${o.upload_img}')">
-                  <form>
-                  <input type='file' id="imagepicker2" multiple   data-role="none" id="user-fav-upload">
-                  </form>
-                </label>
-            
-        
-         </div>
+
+<div class="profile-dog-type">
+   <div class="display-flex">
+      <div class="flex-stretch profile-dog-types">
+         <a href="#list-page">
+            <div class="dog-type-label">Dog Types Found</div>
+            <div class="dog-number animals-added">${o.length}</div>
+         </a>
+      </div>
+   </div>
+</div>
 
          
          </div>

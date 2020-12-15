@@ -64,26 +64,31 @@ const ListPage = async() => {
 
 
 
-
-
-
-
-
-
-
-
 const UserProfilePage = async() => {
    let d = await query({
-      type:'user_by_id',
-      params:[sessionStorage.userId]
+      type:'user_by_id',params:[sessionStorage.userId]}).then(d=>{
+
+      console.log(d)
+
+      $("#user-profile-page .profile")
+         .html(makeUserProfile(d.result));
    });
 
-   console.log(d)
-
-   //$("#user-fav-img").val(d.result[0].img);
-   $("#user-profile-page .profile")
-      .html(makeUserProfile(d.result));
+   query({type:'animals_by_user_id',params:[sessionStorage.userId]}).then(d=>{
+      $('.animals-added').html(d.result.length);
+   })
 }
+
+
+
+
+
+
+
+
+
+
+
 const UserEditPage = async() => {
    query({
       type:'user_by_id',
@@ -184,12 +189,12 @@ const LocationAddPage = async() => {
       let posFromClick = {
          lat:e.latLng.lat(),
          lng:e.latLng.lng(),
-         icon:"img/marker.svg"
+         icon:"img/icon/icon_marker.svg"
       };
       let posFromCenter = {
          lat:map.getCenter().lat(),
          lng:map.getCenter().lng(),
-         icon:"img/marker.svg"
+         icon:"img/icon/icon_marker.svg"
       };
 
       $("#location-add-lat").val(posFromClick.lat)
