@@ -41,7 +41,7 @@ left{
 body {
    margin:0;
    font-size:100%;
-   font-family: 'Roboto', sans-serif;
+   font-family: 'Amaranth', sans-serif;
 }
 
 h1,
@@ -50,7 +50,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Amaranth', sans-serif;
   color:#a06a00;
 }
 
@@ -1057,7 +1057,7 @@ div#set_icon {
 
 .dog-number.animals-added {
     font-size: 27px;
-    color: #365636;
+    color: #882100;
 }
 
 a.form-button.js-animal-jump {

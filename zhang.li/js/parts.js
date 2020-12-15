@@ -27,7 +27,7 @@ const makeUserProfile = templater(o=>`
             </div>
   
            <div class="user-detail flex-stretch">
-               <h3 id="user-name">${o.name}</h3>
+               <h2 id="user-name">${o.name}</h2>
                <p id="user-location">Location: ${o.location}</p>
              </div>    
 
@@ -50,7 +50,7 @@ const makeUserProfile = templater(o=>`
 
        <br>
 
-
+<h4 id="my-information">How many dog types I found?</h4>
 <div class="profile-dog-type">
    <div class="display-flex">
       <div class="flex-stretch profile-dog-types">
