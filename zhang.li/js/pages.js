@@ -118,18 +118,6 @@ const UserUploadPage = async() => {
 }
 
 
-//const UserUploadFavImgPage = async() => {
- //  query({
- //     type:'user_by_id',
- //     params:[sessionStorage.userId]
- //  }).then(d=>{
- //     console.log(d)
-//
-//     makeUploaderImage($("#user-fav-upload"),d.result[0].img)
-//   });
-//}
-
-
 
 
 
@@ -166,11 +154,6 @@ const AnimalEditPage = async() => {
          .html(makeAnimalEditForm(d.result[0]));
    });
 }
-
-
-
-
-
 
 
 

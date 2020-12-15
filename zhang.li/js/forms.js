@@ -109,7 +109,6 @@ const checkAnimalDelete = id => {
 
 
 
-
 const checkLocationAddForm = () => {
    let lat = $("#location-add-lat").val();
    let lng = $("#location-add-lng").val();
@@ -126,12 +125,6 @@ const checkLocationAddForm = () => {
       window.history.go(-2);
    })
 }
-
-
-
-
-
-
 
 
 
