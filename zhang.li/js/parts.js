@@ -33,7 +33,7 @@ const makeUserProfile = templater(o=>`
 
            <div class="flex-stretch" id="set_icon">
            <a href="#settings-page" >
-               <img src="img/setting.svg" alt="add" class="icon" >
+               <img src="img/setting.svg" alt="add" class="icon" width="40px">
             </a>
           </div>
          </div>

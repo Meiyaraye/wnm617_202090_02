@@ -1041,8 +1041,8 @@ div#set_icon {
 .profile-dog-type {
     text-align: center;
     /* border: 1px solid grey; */
-    padding-top: 3em;
-    padding-bottom: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     border-radius: 1em;
     background-color: #ffe7a5bd;
  
@@ -1062,4 +1062,8 @@ div#set_icon {
 
 a.form-button.js-animal-jump {
     margin-top: 2em;
+}
+
+img.icon {
+    width: 50px;
 }
